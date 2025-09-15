@@ -1,0 +1,447 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Comic Sans MS;
+  overflow-x: hidden; /* 🚫 No scroll horizontal */
+  overflow-y: auto;   /* ✅ Scroll vertical */
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contenidoPDF {
+  background: #fff;
+  padding: 20px 25px 30px 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* HEADER: mostrar logo a la izquierda y alinear con el resto */
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+img.logo {
+  display: block;
+  width: 130px;
+  height: auto;
+}
+
+h2 {
+  text-align: center;
+  margin: 0 auto 20px auto;
+  text-decoration: underline;
+  padding: 10px;
+  width: 95%;
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+h2, .texto, .header, h3 {
+  width: 95%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h3 {
+  text-align: center;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+.datos {
+  width: 95%;
+  max-width: 1200px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label input {
+  text-align: center;
+}
+
+/* Centrar el div .auto y dar espacio entre auto1 y auto2 */
+.auto {
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 10px 40px;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.auto1,
+.auto2 {
+  display: flex;
+  justify-content: center;
+  gap: 55px;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.auto1 label,
+.auto2 label {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  flex: 0 0 auto;
+}
+
+.texto {
+  margin: 40px auto;
+}
+
+.dataform {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 95%;
+}
+
+.form-group siniestro {
+  width: 20%;
+}
+
+.form-group label {
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+  text-align: center;
+}
+
+.form-group input {
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 2px 4px;
+  font: inherit;
+  width: auto;
+  min-width: 10ch;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.form-group label span {
+  text-align: center;
+  min-width: 80px;
+  vertical-align: middle;
+}
+
+.Observaciones {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: stretch;
+  width: 90%;
+  max-width: 90%;
+  padding: 30px;
+  gap: 50px;
+}
+
+.imagen-y-campos {
+  width: 50%;
+}
+
+.notas {
+  flex: 1;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.notas h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.notas .nota {
+  width: 100%;
+  flex: 1;
+  line-height: 1.5em;
+  padding: 10px;
+  resize: vertical;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 1.45em,
+    #ccc 1.5em
+  );
+  font-family: 'Comic Sans MS', sans-serif;
+  font-size: 1em;
+  overflow: auto;
+}
+
+.canvas-section {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.canvas-section canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin-top: 40px;
+}
+
+/* Botón limpiar */
+.clear-button {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background-color: #005f9e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clear-button:hover {
+  background-color: #00416d;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  table-layout: auto;
+  max-width: 100%;
+  width: 95%;
+  white-space: nowrap;
+}
+
+table td:first-child,
+table th:first-child {
+  white-space: normal;
+}
+
+#tablaPiezas1 td:nth-child(3),
+#tablaPiezas1 th:nth-child(3) {
+  flex: 1;
+  min-width: 110px;
+}
+
+th, td {
+  border: 1px solid #000;
+  padding: 5px;
+  text-align: left;
+  white-space: nowrap;
+  word-wrap: break-word;
+  font-size: 0.85em;
+}
+
+td input {
+  width: 85%;
+  border: none;
+  padding: 5px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.tablas-piezas {
+  display: flex;
+  width: 95%;
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  overflow-y: auto;
+}
+
+.noti h3 {
+  width: 95%;
+  border: none;
+}
+
+/* Firma */
+.firma {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centra el canvas */
+  position: relative;
+  margin: 20px 0;
+}
+
+.firma canvas {
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin: 0 auto;        /* asegura que quede centrado */
+}
+
+.boton-firma{
+  display: flex;
+  justify-content: flex-end;
+  width: 78%;
+  margin-top: -10px;
+  }
+
+.boton-firma button{
+  align-self: flex-end;
+}
+
+
+/* Texto sobre canvas */
+.firma-texto {
+  position: absolute;
+  bottom: 5px;
+  left: 8px;
+  font-size: 14px;
+  font-family: sans-serif;
+  color: #333;
+}
+
+/* Botón generar PDF */
+.boton {
+  display: block;
+  margin: 20px auto;      /* centrado debajo */
+  padding: 6px 12px;
+  background-color: #005f9e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background-color: #00416d;
+}
+
+/* Estilos aplicados SOLO cuando se genera el PDF */
+.modo-pdf #contenidoPDF {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  margin-top: 0;
+  padding: 10mm;
+  background: white;
+  box-sizing: border-box;
+  transform: none !important;
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+.no-break {
+  page-break-inside: avoid;
+}
+
+.modo-pdf body {
+  margin: 0;
+}
+
+.modo-pdf h2 {
+  font-size: 0.9em;
+}
+
+.modo-pdf .texto {
+  font-size: 0.8em;
+}
+
+.modo-pdf table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  word-break: break-word;
+  page-break-inside: auto;
+}
+
+.modo-pdf tr {
+  page-break-inside: avoid;
+  page-break-after: auto;
+}
+
+.modo-pdf td,
+.modo-pdf th {
+  padding: 4px;
+  font-size: 8pt;
+  white-space: normal;
+}
+
+.modo-pdf .tablas-piezas {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.modo-pdf .tablas-piezas table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.modo-pdf .tablas-piezas th,
+.modo-pdf .tablas-piezas td {
+  padding: 6px;
+  word-break: break-word;
+  font-size: 8pt;
+  text-align: left;
+}
+
+.modo-pdf .noti h3 {
+  font-size: 0.85em;
+}
+
+.modo-pdf .firma canvas {
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: block;
+  align-self: flex-end;
+}
+
+.modo-pdf .firma {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.modo-pdf .boton,
+.modo-pdf .clear-button {
+  display: none !important;
+}
