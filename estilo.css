@@ -27,40 +27,14 @@ html, body {
   margin-bottom: 15px;
 }
 
-/* HEADER: mostrar logo a la izquierda y alinear con el resto */
-.header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0;
-  padding: 0;
-}
-
-.logo {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-img.logo {
-  display: block;
-  width: 130px;
-  height: auto;
-}
-
 h2 {
   text-align: center;
   margin: 0 auto 20px auto;
-  text-decoration: underline;
   padding: 10px;
-  width: 95%;
+  width: 100%;
   max-width: 1200px;
   margin-top: 20px;
+  background-color: #1F4E78;
 }
 
 h2, .texto, .header, h3 {
