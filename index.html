@@ -14,99 +14,69 @@
 
 
       <div class="datos">
-          <form id="dataForm">
-             <div class="form-group">
-                 <div class="stro">
-            <label class="siniestro"> 
-                <span>Siniestro:</span>
-                <input type="text" id="siniestro1" required />             
-                <span>Año:</span>
-                <input type="text" id="siniestro2" 
-                       min="1900" max="2100" 
-                       required  
-                       placeholder="XXXX" 
-                       title="Debe ingresar el año completo con 4 dígitos (ej: 2025)"
-                       pattern="\d{4}" />
-                <span>FECHA</span> 
-                <input type="date" id="fecha" required />
-            </label>
-                 </div>
+          <form id="columna izq">
+             <div class="lugar">
+                 <span>FECHA</span> <input type="date" id="fecha" required />
+                 <label><span>Lugar de Inspección</span> <input type="text" id="ubicación" required /></label>
+                 <label><span>Localidad</span> <input type="text" id="localidad" required /></label>
                </div>
+
+            <div class="info-auto"> 
+                <label><span>Marca</span> <input type="text" id="marca" required /></label>
+                <label><span>Año</span> <input type="text" id="año" required /></label>
+                <label><span>Modelo</span> <input type="text" id="modelo" required /></label>
+                <label><span>Chasis</span> <input type="text" id="chasis" required /></label>
+            </div>
             </form>
+
+          <form id="columna der">
+            <div class="stro">
+                <label class="siniestro"> 
+                    <span>Siniestro:</span>
+                    <input type="text" id="siniestro1" required />             
+                    <span>Año:</span>
+                    <input type="text" id="siniestro2" 
+                           min="1900" max="2100" 
+                           required  
+                           placeholder="XXXX" 
+                           title="Debe ingresar el año completo con 4 dígitos (ej: 2025)"
+                           pattern="\d{4}" />
+                  </label>
+                <label><span>Matrícula</span> <input type="text" id="matrícula" required /></label>
+            </div>
+          <div class="color">
+                <label><span>Color</span> <input type="text" id="color" required /></label>
+                <label><span>Motor</span> <input type="text" id="Motor" required /></label>
+                <label><span>Tipo de cambio</span> <input type="text" id="cambio" required /></label>
+          </form>
       </div>
-          <div class="auto">
-            <div class="auto1">
-             <label><span>CARPETA</span> <input type="text" id="carpeta" required /></label>
-              <label><span>ASEGURADO</span> <input type="text" id="asegurado" required /></label>
-             </div>
-              <div class="auto2">
-             <label><span>VEHICULO</span> <input type="text" id="vehiculo" required /></label>
-             <label><span>MATRICULA</span> <input type="text" id="matricula" required /></label>
-            </div>
-        </div>
-      
 
-      <div class="texto">
-        <h3>SE ACONSEJA EXCLUIR DE COBERTURA A ESTE VEHICULO ATENTO A QUE PRESENTA<br>
-        LOS SIGUIENTES DESPERFECTOS  Y/O  DESGASTES POR USO</h3>
-            </div>
-
-      <div class="tablas-piezas">
-        <table id="tablaPiezas1">
+      <div class="tablas">
+        <table id="tablaValor">
         <thead>
           <tr>
-            <th>CONDICIONES DE ASEGURABILIDAD</th>
-            <th>NO CUMPLE</th>
-            <th>PLAZO OTORGADO</th>
-            <th>LEVANTAR EN Vo. Ro.</th>
-            <th>LEVANTAR OBSERVACIONES</th>
+            <th></th>
+            <th>U$S</th>
+            <th>$U</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>FRENO DE MANO</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" />días</td><td><input type="text" /></td><td><input type="text" /></td></tr>
-          <tr><td>FRENO DE PIE</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" />días</td><td><input type="text" /></td><td><input type="text" /></td></tr>
-          <tr><td>LIMPIAPARABRISAS</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" />días</td><td><input type="text" /></td><td><input type="text" /></td></tr>
-          <tr><td>LUCES</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" />días</td><td><input type="text" /></td><td><input type="text" /></td></tr>
-          <tr><td>ESTADO GENERAL DE CONSERVACION</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" />días</td><td><input type="text" /></td><td><input type="text" /></td></tr>
-          <tr><td>...........CUBIERTAS</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" />días</td><td><input type="text" /></td><td><input type="text" /></td></tr>
-          <tr><td>SEGURIDAD EN PUERTAS</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" />días</td><td><input type="text" /></td><td><input type="text" /></td></tr>
-          <tr><td>CINTURONES DE SEGURIDAD</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" />días</td><td><input type="text" /></td><td><input type="text" /></td></tr>
-          <tr><td>PARAGOLPE DELANTERO</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" />días</td><td><input type="text" /></td><td><input type="text" /></td></tr>
-          <tr><td>PARAGOLPE TRASERO</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" />días</td><td><input type="text" /></td><td><input type="text" /></td></tr>
-          <tr><td>CABLEADO ELECTRICO</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" />días</td><td><input type="text" /></td><td><input type="text" /></td></tr>
-          <tr><td>PARABRISAS</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" />días</td><td><input type="text" /></td><td><input type="text" /></td></tr>
-          <tr><td><input class="autocomplete" type="text" autocomplete="off" spellcheck="false" placeholder="Escribe..."/></td><td><input type="text"/></td><td><input type="text" />días</td><td><input type="text" /></td><td><input type="text" /></td></tr>
+          <tr><td>VALOR VENAL AUTODATA (Automóviles // Vehículos pesados)</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" />días</td></tr>
+          <tr><td>VALOR VENAL PLAZA (Motos)</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" />días</td></tr>
+          <tr><td>VALOR ESTIMADO DE LA REPARACIÓN</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" />días</td></tr>
+          <tr><td>VALOR MÍNIMO DE RESTOS</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" />días</td></tr>
+          <tr><td>DEPRECIACIONES</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" />días</td></tr>
+          
         </tbody>
       </table>
     </div>
       
-    <div class="Observaciones">
-          <div class="imagen-y-campos">
-            <div class="canvas-section">
-              <canvas id="canvas" width="700" height="350"></canvas>
-              <button class="clear-button" type="button" onclick="clearCanvas()">Limpiar Dibujo</button>
-             </div>
-          </div> 
-            <div class="notas">
-              <h2>Observaciones</h2>
+      <div class="observaciones">
+              <h2 class="Obs">OBSERVACIONES</h2>
               <textarea class="nota" placeholder=""></textarea>
-            </div>         
-    </div>
-
-        
-        <div class="noti">
-        <h3>ME NOTIFICO DE LOS PLAZOS OTORGADOS PARA RESOLVER LAS <br>
-        CONDICIONES DE ASEGURABILIDAD NO CUMPLIDAS</h3>
-      </div>
+            </div>    
       
-        <div class="firma">
-          <canvas id="canvas1" width="600" height="200"></canvas>
-             </div>
-
-        <div class="boton-firma">
-           <button class="clear-button" type="button" onclick="clearCanvas1()">Limpiar Firma</button>
-        </div>
-      
+   
       <form id="boton">
           <div style="text-align: center; margin: 30px 0;">
               <button class="boton" onclick="generarPDF()">Generar PDF</button>
