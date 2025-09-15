@@ -37,7 +37,7 @@ h2 {
   background-color: #1F4E78;
 }
 
-h2, .texto, .header, h3 {
+.texto, h3 {
   width: 95%;
   max-width: 1200px;
   margin: auto;
