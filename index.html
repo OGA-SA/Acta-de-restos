@@ -16,7 +16,7 @@
       <div class="datos">
           <form id="columna izq">
              <div class="lugar">
-                 <span>FECHA</span> <input type="date" id="fecha" required />
+              <div id="fecha"></div>
                  <label><span>Lugar de Inspección</span> <input type="text" id="ubicación" required /></label>
                  <label><span>Localidad</span> <input type="text" id="localidad" required /></label>
                </div>
@@ -436,25 +436,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const fechaInput = document.getElementById("fecha");
     const dificultadVisual = (document.getElementById("dificultadVisual") || {}).value?.trim() || "";
 
-    if (!carpeta || !asegurado || !vehiculo || !matricula || !siniestro1 || !siniestro2 || !fechaInput.value) {
+    if (!carpeta || !asegurado || !vehiculo || !matricula || !siniestro1 || !siniestro2) {
       alert("⚠️ Complete todos los campos antes de generar el PDF.");
       return;
     }
     
-   const hoy = new Date();
-const dia = String(hoy.getDate()).padStart(2, "0");
-const mes = String(hoy.getMonth() + 1).padStart(2, "0");
-const anio = hoy.getFullYear();
-const fechaFormateada = `${dia}/${mes}/${anio}`;
+  
+  const fechaDiv = document.getElementById("fecha");
+  const hoy = new Date();
 
-// Insertar en el DOM
-const fechaLabel = fechaInput.parentElement;
-const spanFecha = document.createElement("span");
-spanFecha.textContent = fechaFormateada;
-fechaLabel.appendChild(spanFecha);
+  // Array con los nombres de los meses en español (abreviados como "Setiembre")
+  const meses = [
+    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+    "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"
+  ];
 
-// Ocultar el input porque ya no se usa
-fechaInput.style.display = "none";
+  const dia = hoy.getDate();
+  const mes = meses[hoy.getMonth()];
+  const anio = hoy.getFullYear();
+
+  // Construir el texto
+  fechaDiv.textContent = `${dia} de ${mes} de ${anio}`;
 
     const ok = confirm("¿El número de siniestro ingresado es correcto:" + siniestro1 + "-" + siniestro2 + "?");
     if (!ok) {
