@@ -64,6 +64,10 @@ h3 {
   flex-direction: column;
 }
 
+.lugar{
+  display: flex;
+  flex-direction: column;
+}
   
 label input {
   text-align: center;
