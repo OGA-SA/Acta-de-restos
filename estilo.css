@@ -90,6 +90,7 @@ h3 {
   flex-direction: row;
   font-weight: bold;  /* opcional: negrita */
   gap: 10px;
+  white-space: nowrap;
 }
 
 .lugar input {
