@@ -95,6 +95,7 @@ h3 {
 
 label{
   font-weight: bold;
+  padding: 6px 10px;  /* 👈 agranda la caja */
 }
   
   
