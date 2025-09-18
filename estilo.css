@@ -86,12 +86,12 @@ h3 {
 }
 .lugar label {
   font-weight: bold;  /* opcional: negrita */
-  margin-bottom: 10px;
+  gap: 10px;
 }
 
 .lugar input {
   padding: 6px 10px;  /* 👈 agranda la caja */
-  width: 100%;        /* ocupa todo el ancho disponible */
+  width: 60%;        /* ocupa todo el ancho disponible */
   max-width: 300px;   /* límite para que no se estire de más */
 }
 label input {
