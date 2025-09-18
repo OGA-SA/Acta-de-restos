@@ -110,10 +110,10 @@ label input {
 .observaciones h2{
   background-color: transparent;
   text-align: start;
-  font-size: 0.8em;
+  font-size: 0.95em;
 }
 #nota {
-  width: 95%;        /* mismo ancho que el h2 */
+  width: 100%;        /* mismo ancho que el h2 */
   max-width: 1200px; /* mismo límite que usás en otros */
   height: 200px;     /* podés ajustar la altura */
   resize: vertical;  /* solo permite estirar hacia abajo */
