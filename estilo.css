@@ -96,7 +96,7 @@ h3 {
 
 .lugar input {
   padding: 6px 10px;  /* 👈 agranda la caja */
-  width: 60%;        /* ocupa todo el ancho disponible */
+  width: 75%;        /* ocupa todo el ancho disponible */
   max-width: 300px;   /* límite para que no se estire de más */
   background-color: #FFC000;
 }
