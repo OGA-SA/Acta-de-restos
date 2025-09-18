@@ -55,34 +55,42 @@ h3 {
   margin: 30px auto;
   display: flex;
   flex-direction: row;
+  justify-content: space-between; /* 👈 distribuye bien */
 }
 
-.columna izq,
-.columna der{
+.columna.izq {
+  flex: 3;  /* 👈 más ancha */
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
-.columna izq{
-  width: 60%;
-  margin: auto;
-}
-
-.columna der{
-  width: 30%;
-  margin: auto;
-}
-
-
-.lugar{
+.columna.der {
+  flex: 1;  /* 👈 más angosta */
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  align-items: flex-end; /* 👈 alinear todo a la derecha */
+  gap: 20px;
 }
-  
+
+.columna.der .color label:last-child {
+  align-self: flex-start; /* 👈 solo ese se va a la izquierda */
+}
+
+.lugar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* 👈 contenido pegado a la derecha */
+}
+
 label input {
   text-align: center;
+}
+
+.info-auto {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 👈 centrado horizontal */
+  gap: 10px;
 }
 
 .Observaciones {
