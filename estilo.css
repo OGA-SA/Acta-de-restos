@@ -110,6 +110,7 @@ label input {
 .observaciones h2{
   background-color: transparent;
   text-align: start;
+  font-size: 0.8em;
 }
 .observaciones .nota{
   witdh: 95%;
