@@ -111,7 +111,7 @@ label input {
 .observaciones h2{
   background-color: transparent;
   text-align: start;
-  font-size: 0.95em;
+  font-size: 1em;
 }
 #nota {
   width: 100%;        /* mismo ancho que el h2 */
