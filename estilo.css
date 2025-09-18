@@ -64,11 +64,13 @@ h3 {
 }
 
 .columna izq{
-  flex: 1;
+  width: 60%;
+  margin: auto;
 }
 
 .columna der{
-  flex: 2;
+  width: 30%;
+  margin: auto;
 }
 
 
