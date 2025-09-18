@@ -54,10 +54,17 @@ h3 {
   max-width: 1200px;
   margin: 30px auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 20px;
 }
 
+.columna izq,
+.columna der{
+  display: flex;
+  flex-direction: column;
+}
+
+  
 label input {
   text-align: center;
 }
