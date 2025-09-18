@@ -86,6 +86,7 @@ h3 {
   align-items: flex-end; /* 👈 contenido pegado a la derecha */
   gap: 15px;
 }
+
 .lugar label {
   display: flex;
   flex-direction: row;
@@ -96,6 +97,9 @@ h3 {
 label{
   font-weight: bold;
   padding: 6px 10px;  /* 👈 agranda la caja */
+  width: 75%;        /* ocupa todo el ancho disponible */
+  max-width: 400px;   /* límite para que no se estire de más */
+  background-color: #FFF2CC;
 }
   
   
