@@ -89,11 +89,15 @@ h3 {
 .lugar label {
   display: flex;
   flex-direction: row;
-  font-weight: bold;  /* opcional: negrita */
   gap: 10px;
   white-space: nowrap;
 }
 
+.label{
+  font-weight: bold;
+}
+  
+  
 .lugar input {
   padding: 6px 10px;  /* 👈 agranda la caja */
   width: 75%;        /* ocupa todo el ancho disponible */
