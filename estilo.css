@@ -103,8 +103,8 @@ label{
   
 .lugar input {
   padding: 6px 10px;  /* 👈 agranda la caja */
-  width: 75%;        /* ocupa todo el ancho disponible */
-  max-width: 400px;   /* límite para que no se estire de más */
+  width: 100%;        /* ocupa todo el ancho disponible */
+  max-width: 600px;   /* límite para que no se estire de más */
   background-color: #FFC000;
 }
 label input {
