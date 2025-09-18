@@ -59,7 +59,7 @@ h3 {
 }
 
 .columna.izq {
-  flex: 3;  /* 👈 más ancha */
+  flex: 2;  /* 👈 más ancha */
   display: flex;
   flex-direction: column;
   gap: 20px;
