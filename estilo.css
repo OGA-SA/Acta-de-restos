@@ -64,6 +64,11 @@ h3 {
   flex-direction: column;
 }
 
+.columna der{
+  width: 30%;
+}
+
+
 .lugar{
   display: flex;
   flex-direction: column;
