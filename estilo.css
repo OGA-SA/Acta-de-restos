@@ -105,6 +105,10 @@ label input {
   gap: 50px;
 }
 
+.observaciones h2{
+  background-color: transparent;
+  text-align: start;
+}
 .nota{
   witdh: 95%;
   border: 1px solid black;
