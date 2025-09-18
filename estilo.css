@@ -101,7 +101,7 @@ h3 {
 .lugar input {
   padding: 6px 10px;  /* 👈 agranda la caja */
   width: 75%;        /* ocupa todo el ancho disponible */
-  max-width: 300px;   /* límite para que no se estire de más */
+  max-width: 400px;   /* límite para que no se estire de más */
   background-color: #FFC000;
 }
 label input {
@@ -130,6 +130,7 @@ label input {
   text-align: start;
   font-size: 1em;
 }
+
 #nota {
   width: 100%;        /* mismo ancho que el h2 */
   max-width: 1200px; /* mismo límite que usás en otros */
