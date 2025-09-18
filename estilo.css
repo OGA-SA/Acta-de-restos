@@ -96,11 +96,7 @@ h3 {
 
 label{
   font-weight: bold;
-  padding: 6px 10px;  /* 👈 agranda la caja */
-  width: 75%;        /* ocupa todo el ancho disponible */
-  max-width: 400px;   /* límite para que no se estire de más */
-  background-color: #FFF2CC;
-   white-space: nowrap;
+  white-space: nowrap;
 }
   
   
@@ -112,6 +108,8 @@ label{
 }
 label input {
   text-align: center;
+  background-color: #FFF2CC;
+  padding: 6px 10px;  /* 👈 agranda la caja */
 }
 
 .info-auto {
