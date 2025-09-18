@@ -63,8 +63,12 @@ h3 {
   flex-direction: column;
 }
 
+.columna izq{
+  flex: 1;
+}
+
 .columna der{
-  width: 30%;
+  flex: 2;
 }
 
 
