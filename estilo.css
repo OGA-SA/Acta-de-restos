@@ -58,6 +58,7 @@ h3 {
   justify-content: space-between; /* 👈 distribuye bien */
   gap: 25px;
   padding: 10px;
+  height: auto;
 }
 
 .columna.izq {
