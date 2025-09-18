@@ -85,47 +85,6 @@ label input {
   text-align: center;
 }
 
-
-.dataform {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 95%;
-}
-
-.form-group siniestro {
-  width: 20%;
-}
-
-.form-group label {
-  min-width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  padding: 10px;
-  text-align: center;
-}
-
-.form-group input {
-  border: 1px solid #999;
-  border-radius: 4px;
-  padding: 2px 4px;
-  font: inherit;
-  width: auto;
-  min-width: 10ch;
-  max-width: 100%;
-  vertical-align: middle;
-}
-
-.form-group label span {
-  text-align: center;
-  min-width: 80px;
-  vertical-align: middle;
-}
-
 .Observaciones {
   display: flex;
   flex-direction: row;
@@ -136,20 +95,6 @@ label input {
   max-width: 90%;
   padding: 30px;
   gap: 50px;
-}
-
-
-.notas {
-  flex: 1;
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.notas h2 {
-  text-align: center;
-  margin-bottom: 10px;
 }
 
 
@@ -268,9 +213,6 @@ td input {
   font-size: 0.9em;
 }
 
-.modo-pdf .texto {
-  font-size: 0.8em;
-}
 
 .modo-pdf table {
   width: 100%;
@@ -311,9 +253,6 @@ td input {
   text-align: left;
 }
 
-.modo-pdf .noti h3 {
-  font-size: 0.85em;
-}
 
 .modo-pdf .boton,
 .modo-pdf .clear-button {
