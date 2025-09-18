@@ -80,6 +80,7 @@ h3 {
 }
 
 .lugar {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-end; /* 👈 contenido pegado a la derecha */
