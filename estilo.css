@@ -105,7 +105,10 @@ label input {
   gap: 50px;
 }
 
-
+.nota{
+  witdh: 95%;
+  border: 1px solid black;
+}
 
 /* Botón limpiar */
 .clear-button {
