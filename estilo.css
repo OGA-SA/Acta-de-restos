@@ -112,9 +112,16 @@ label input {
   text-align: start;
   font-size: 0.8em;
 }
-.observaciones .nota{
-  witdh: 95%;
-  border: 1px solid black;
+#nota {
+  width: 95%;        /* mismo ancho que el h2 */
+  max-width: 1200px; /* mismo límite que usás en otros */
+  height: 200px;     /* podés ajustar la altura */
+  resize: vertical;  /* solo permite estirar hacia abajo */
+  margin: 0 auto;    /* centrado */
+  display: block;    /* para que el margin funcione bien */
+  padding: 10px;     /* espacio interno */
+  font-family: inherit; /* misma fuente que el resto */
+  font-size: 1em;
 }
 
 /* Botón limpiar */
