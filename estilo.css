@@ -100,6 +100,7 @@ label{
   width: 75%;        /* ocupa todo el ancho disponible */
   max-width: 400px;   /* límite para que no se estire de más */
   background-color: #FFF2CC;
+   white-space: nowrap;
 }
   
   
