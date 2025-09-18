@@ -77,41 +77,6 @@ label input {
   text-align: center;
 }
 
-/* Centrar el div .auto y dar espacio entre auto1 y auto2 */
-.auto {
-  width: 95%;
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #999;
-  border-radius: 4px;
-  padding: 10px 40px;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-}
-
-.auto1,
-.auto2 {
-  display: flex;
-  justify-content: center;
-  gap: 55px;
-  width: 100%;
-  flex-wrap: nowrap;
-}
-
-.auto1 label,
-.auto2 label {
-  display: flex;
-  gap: 10px;
-  padding: 15px;
-  flex: 0 0 auto;
-}
-
-.texto {
-  margin: 40px auto;
-}
 
 .dataform {
   display: flex;
@@ -165,9 +130,6 @@ label input {
   gap: 50px;
 }
 
-.imagen-y-campos {
-  width: 50%;
-}
 
 .notas {
   flex: 1;
@@ -182,40 +144,7 @@ label input {
   margin-bottom: 10px;
 }
 
-.notas .nota {
-  width: 100%;
-  flex: 1;
-  line-height: 1.5em;
-  padding: 10px;
-  resize: vertical;
-  border: 1px solid #999;
-  border-radius: 4px;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent,
-    transparent 1.45em,
-    #ccc 1.5em
-  );
-  font-family: 'Comic Sans MS', sans-serif;
-  font-size: 1em;
-  overflow: auto;
-}
 
-.canvas-section {
-  flex: 1;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.canvas-section canvas {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  margin-top: 40px;
-}
 
 /* Botón limpiar */
 .clear-button {
@@ -283,44 +212,6 @@ td input {
 .noti h3 {
   width: 95%;
   border: none;
-}
-
-/* Firma */
-.firma {
-  display: flex;
-  flex-direction: column;
-  align-items: center;   /* centra el canvas */
-  position: relative;
-  margin: 20px 0;
-}
-
-.firma canvas {
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  display: block;
-  margin: 0 auto;        /* asegura que quede centrado */
-}
-
-.boton-firma{
-  display: flex;
-  justify-content: flex-end;
-  width: 78%;
-  margin-top: -10px;
-  }
-
-.boton-firma button{
-  align-self: flex-end;
-}
-
-
-/* Texto sobre canvas */
-.firma-texto {
-  position: absolute;
-  bottom: 5px;
-  left: 8px;
-  font-size: 14px;
-  font-family: sans-serif;
-  color: #333;
 }
 
 /* Botón generar PDF */
@@ -416,19 +307,6 @@ td input {
   font-size: 0.85em;
 }
 
-.modo-pdf .firma canvas {
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  display: block;
-  align-self: flex-end;
-}
-
-.modo-pdf .firma {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
 .modo-pdf .boton,
 .modo-pdf .clear-button {
   display: none !important;
