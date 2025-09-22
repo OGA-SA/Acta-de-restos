@@ -60,14 +60,14 @@ h3 {
   height: auto;
 }
 
-.columna izq {
+.columna.izq {
   flex: 2.5;  /* 👈 más ancha */
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.columna der {
+.columna.der {
   flex: 1;  /* 👈 más angosta */
   display: flex;
   flex-direction: column;
