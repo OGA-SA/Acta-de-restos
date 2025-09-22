@@ -51,17 +51,16 @@ h3 {
 
 .datos {
   width: 95%;
-  max-width: 1200px;
   margin: 30px auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between; /* 👈 distribuye bien */
-  gap: 25px;
+  gap: 35px;
   padding: 10px;
   height: auto;
 }
 
-.columna.izq {
+.columna izq {
   flex: 2.5;  /* 👈 más ancha */
   display: flex;
   flex-direction: column;
