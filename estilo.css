@@ -67,7 +67,8 @@ h3 {
   flex-direction: column;
   gap: 20px;
 }
-.columna.der {
+
+.columna der {
   flex: 1;  /* 👈 más angosta */
   display: flex;
   flex-direction: column;
