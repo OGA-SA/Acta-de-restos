@@ -61,7 +61,7 @@ h3 {
 }
 
 .columna.izq {
-  flex: 2;
+  flex: 2.5;
   display: flex;
   flex-direction: column;
   gap: 25px;
