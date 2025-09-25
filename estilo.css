@@ -136,6 +136,7 @@ h3 {
   flex-direction: column; /* ✅ ahora van uno debajo del otro */
   gap: 15px;
   width: 100%;
+  margin: 0 auto 20px 0;
 }
 
 .color label {
