@@ -101,7 +101,7 @@ h3 {
   flex-direction: column;
   align-items: flex-end;
   gap: 12px;
-  margin: 0 auto 10px 0;
+  margin: 0 auto 25px 0;
 }
 
 .lugar label {
