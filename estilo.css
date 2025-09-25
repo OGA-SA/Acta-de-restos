@@ -132,17 +132,21 @@ h3 {
   display: flex;
   flex-direction: column; /* ✅ ahora van uno debajo del otro */
   gap: 15px;
-  width: 95%;
+  width: 100%;
 }
 
 .color label {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  flex-wrap: nowrap;
-  
+  flex-wrap: nowrap; 
 }
 
+.color label input {
+  width: 60px; /* tamaño fijo */
+  max-width: 60px; /* asegura que no se expanda */
+  padding: 4px 6px; /* ajusta padding si quieres que sea más pequeño */
+ }
 /* Tipo de cambio a la izquierda */
 .color label#cambio,
 .color label[for="cambio"] {
