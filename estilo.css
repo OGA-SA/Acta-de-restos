@@ -113,7 +113,7 @@ h3 {
 /* 📌 Color/Motor columna derecha, Tipo cambio columna izquierda */
 .color {
   display: flex;
-  flex-direction: row;
+  flex-direction: row;  /* ❌ esto los pone en línea */
   justify-content: space-between;
   gap: 20px;
   width: 100%;
