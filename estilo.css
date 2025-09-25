@@ -5,6 +5,8 @@
 }
 
 html, body {
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
   font-family: Comic Sans MS;
@@ -23,9 +25,6 @@ html, body {
   text-align: left;
   margin-top: 15px;
   margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 h2 {
@@ -35,7 +34,6 @@ h2 {
   width: 100%;
   max-width: 1200px;
   background-color: #1F4E78;
-  color: white;
 }
 
 .texto, h3 {
@@ -53,47 +51,48 @@ h3 {
 
 .datos {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1200px;     /* ✅ ahora el ancho máximo coincide con h2 */
   margin: 0 auto 30px auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 35px;
   padding: 10px;
-  flex-wrap: wrap; /* permite que se adapten en pantallas pequeñas */
-}
-
-.columna {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  min-width: 0; /* para que flex funcione correctamente */
+  height: auto;
 }
 
 .columna.izq {
   flex: 3;
+  min-width: 0;          /* ✅ permite que flex controle el tamaño */
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .columna.der {
   flex: 1;
+  min-width: 0; 
+  display: flex;
+  flex-direction: column;
   align-items: flex-end;
+  gap: 20px;
 }
 
 .siniestro {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-end;  /* ✅ fuerza todo a la derecha */
   gap: 12px;
 }
 
 .siniestro label {
   display: flex;
-  flex-direction: row-reverse; /* input a la derecha del texto */
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: flex-end; /* ✅ inputs y textos pegados a la derecha */
   gap: 8px;
   text-align: right;
 }
-
+/* 📌 Fecha, lugar y localidad alineados a la derecha */
 .lugar {
   width: 100%;
   display: flex;
@@ -104,11 +103,12 @@ h3 {
 
 .lugar label {
   display: flex;
-  flex-direction: row-reverse; /* input a la derecha */
+  flex-direction: row;
   gap: 10px;
   white-space: nowrap;
 }
 
+/* 📌 Info Auto (marca/año en línea, modelo/chasis en columna centrados) */
 .info-auto {
   display: flex;
   flex-direction: column;
@@ -127,12 +127,12 @@ h3 {
   text-align: center;
 }
 
+/* 📌 Color/Motor columna derecha, Tipo cambio columna izquierda */
 .color {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
+  flex-direction: column; /* ✅ ahora van uno debajo del otro */
   gap: 15px;
+  width: 100%;
 }
 
 .color label {
@@ -140,13 +140,16 @@ h3 {
   flex-direction: column;
   gap: 6px;
   white-space: nowrap;
+  
 }
 
+/* Tipo de cambio a la izquierda */
 .color label#cambio,
 .color label[for="cambio"] {
   align-items: flex-start;
 }
 
+/* Color y Motor a la derecha */
 .color label#color,
 .color label#Motor,
 .color label[for="color"],
@@ -201,6 +204,7 @@ label input {
   font-size: 1em;
 }
 
+/* Botón limpiar */
 .clear-button {
   margin-top: 8px;
   padding: 6px 12px;
@@ -263,6 +267,7 @@ td input {
   border: none;
 }
 
+/* Botón generar PDF */
 .boton {
   display: block;
   margin: 20px auto;
@@ -277,6 +282,7 @@ td input {
   background-color: #00416d;
 }
 
+/* Estilos para PDF */
 .modo-pdf #contenidoPDF {
   width: 210mm;
   min-height: 297mm;
