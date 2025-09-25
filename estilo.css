@@ -148,7 +148,7 @@ h3 {
 .color label input {
   width: 80%; /* tamaño fijo */
   max-width: 80%; /* asegura que no se expanda */
-  padding: 4px 6px; /* ajusta padding si quieres que sea más pequeño */
+  padding: 6px 10px; /* ajusta padding si quieres que sea más pequeño */
  }
 /* Tipo de cambio a la izquierda */
 .color label#cambio,
