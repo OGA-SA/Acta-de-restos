@@ -59,6 +59,8 @@ h3 {
   gap: 35px;
   padding: 10px;
   height: auto;
+  align-items: stretch;
+  flex-wrap: nowrap;
 }
 
 .columna.izq {
