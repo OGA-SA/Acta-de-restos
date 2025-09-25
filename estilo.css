@@ -113,26 +113,29 @@ h3 {
 /* 📌 Color/Motor columna derecha, Tipo cambio columna izquierda */
 .color {
   display: flex;
-  flex-direction: row;  /* ❌ esto los pone en línea */
-  justify-content: space-between;
-  gap: 20px;
+  flex-direction: column; /* ✅ ahora van uno debajo del otro */
+  gap: 15px;
   width: 100%;
 }
 
 .color label {
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.color label:first-child {
-  align-items: flex-start; /* Tipo de cambio a la izquierda */
+/* Tipo de cambio a la izquierda */
+.color label#cambio,
+.color label[for="cambio"] {
+  align-items: flex-start;
 }
 
-.color label:nth-child(2),
-.color label:nth-child(3) {
-  align-items: flex-end; /* Color y Motor a la derecha */
+/* Color y Motor a la derecha */
+.color label#color,
+.color label#Motor,
+.color label[for="color"],
+.color label[for="Motor"] {
+  align-items: flex-end;
 }
 
 label {
