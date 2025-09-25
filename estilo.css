@@ -51,6 +51,7 @@ h3 {
 
 .datos {
   width: 95%;
+  max-width: 1200px;     /* ✅ ahora el ancho máximo coincide con h2 */
   margin: 30px auto;
   display: flex;
   flex-direction: row;
@@ -62,6 +63,7 @@ h3 {
 
 .columna.izq {
   flex: 3;
+  min-width: 0;          /* ✅ permite que flex controle el tamaño */
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -69,6 +71,7 @@ h3 {
 
 .columna.der {
   flex: 1;
+  min-width: 0; 
   display: flex;
   flex-direction: column;
   align-items: flex-end;
