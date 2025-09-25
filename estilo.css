@@ -140,7 +140,7 @@ h3 {
 
 .color label {
   display: flex;
-  flex-direction: column;
+  flex-direction: in-line;
   gap: 6px;
   flex-wrap: nowrap; 
 }
