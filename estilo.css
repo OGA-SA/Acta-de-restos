@@ -75,6 +75,20 @@ h3 {
   gap: 20px;
 }
 
+.siniestro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;  /* ✅ fuerza todo a la derecha */
+  gap: 12px;
+}
+
+.siniestro label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; /* ✅ inputs y textos pegados a la derecha */
+  gap: 8px;
+  text-align: right;
+}
 /* 📌 Fecha, lugar y localidad alineados a la derecha */
 .lugar {
   width: 100%;
