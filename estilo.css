@@ -61,7 +61,7 @@ h3 {
 }
 
 .columna.izq {
-  flex: 2.5;
+  flex: 3;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -136,6 +136,8 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  white-space: nowrap;
+  
 }
 
 /* Tipo de cambio a la izquierda */
