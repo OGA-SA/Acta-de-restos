@@ -78,12 +78,6 @@ h3 {
   gap: 30px;
 }
 
-.columna {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  min-width: 0;
-}
 
 .siniestro {
   display: flex;
