@@ -138,8 +138,8 @@ h3 {
   text-align: center;
 }
 
-.info-auto #modelo,
-.info-auto #chasis{
+.info-auto label input#modelo,
+.info-auto label input#chasis{
      width: 80%; /* tamaño fijo */
      max-width: 80%; /* asegura que no se expanda */
      padding: 6px 10px; /* ajusta padding si quieres que sea más pequeño */
