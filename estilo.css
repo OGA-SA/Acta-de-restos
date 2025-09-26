@@ -174,13 +174,14 @@ h3 {
 
 .color label#cambio{
  text-align: center;
-  background-color: #FFF2CC;
-  padding: 6px 10px;
+ border: 1px solid #000;
+ padding: 6px 10px;
 }
 
 .color label input#cambio{
   width: 15%; /* tamaño fijo */
   padding: 6px 6px; /* ajusta padding si quieres que sea más pequeño */
+  background-color: #5B9BD5;
 }
 
 /* Color y Motor a la derecha */
