@@ -64,7 +64,7 @@ h3 {
 }
 
 .columna.izq {
-  flex: 2.5;
+  flex: 3;
   min-width: 0;          /* ✅ permite que flex controle el tamaño */
   display: flex;
   flex-direction: column;
