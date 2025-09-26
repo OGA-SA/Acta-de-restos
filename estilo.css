@@ -156,6 +156,7 @@ h3 {
 
 .color label {
   display: flex;
+  justify-content: flex-end;
   flex-direction: in-line;
   gap: 6px;
   flex-wrap: nowrap; 
