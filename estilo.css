@@ -98,7 +98,7 @@ h3 {
   display: flex;
   flex-direction: row;
   justify-content: flex-end; /* ✅ inputs y textos pegados a la derecha */
-  gap: 8px;
+  gap: 15px;
   text-align: right;
 }
 
