@@ -64,7 +64,7 @@ h3 {
 }
 
 .columna.izq {
-  flex: 3 1 60%;         /* crece 3x más, mínimo 60% */
+  flex: 2 1 55%;         /* crece 3x más, mínimo 60% */
   min-width: 300px;      /* no se achica más que esto */
   display: flex;
   flex-direction: column;
