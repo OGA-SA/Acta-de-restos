@@ -51,7 +51,6 @@ h3 {
 
 .datos {
   width: 100%;
-  max-width: 1200px;     /* ✅ ahora el ancho máximo coincide con h2 */
   margin: 0 auto 30px auto;
   display: flex;
   flex-direction: row;
@@ -60,7 +59,7 @@ h3 {
   padding: 10px;
   height: auto;
   align-items: stretch;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .columna.izq {
