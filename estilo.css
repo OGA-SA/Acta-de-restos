@@ -172,10 +172,15 @@ h3 {
   align-items: flex-start;
 }
 
+.color label#cambio{
+ text-align: center;
+  background-color: #FFF2CC;
+  padding: 6px 10px;
+}
+
 .color label input#cambio{
-  width: 20%; /* tamaño fijo */
-  max-width: 30%; /* asegura que no se expanda */
-  padding: 4px 6px; /* ajusta padding si quieres que sea más pequeño */
+  width: 15%; /* tamaño fijo */
+  padding: 6px 6px; /* ajusta padding si quieres que sea más pequeño */
 }
 
 /* Color y Motor a la derecha */
