@@ -64,16 +64,14 @@ h3 {
 }
 
 .columna.izq {
-  flex: 3;
-  min-width: 0;          /* ✅ permite que flex controle el tamaño */
+  min-width: 60%;          /* ✅ permite que flex controle el tamaño */
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
 .columna.der {
-  flex: 1;
-  min-width: 0; 
+  min-width: 30%; 
   display: flex;
   flex-direction: column;
   align-items: flex-end;
