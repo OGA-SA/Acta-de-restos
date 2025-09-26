@@ -25,8 +25,6 @@ html, body {
   text-align: left;
   margin-top: 15px;
   margin-bottom: 15px;
-  width: 100%;
-  max-width: 1200px;
 }
 
 h2 {
@@ -34,8 +32,8 @@ h2 {
   margin: 0 auto 20px auto;
   padding: 10px;
   width: 100%;
+  max-width: 1200px;
   background-color: #1F4E78;
-  color: white;
 }
 
 .texto, h3 {
@@ -53,20 +51,21 @@ h3 {
 
 .datos {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1200px;     /* ✅ ahora el ancho máximo coincide con h2 */
   margin: 0 auto 30px auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 35px;
   padding: 10px;
+  height: auto;
   align-items: stretch;
   flex-wrap: nowrap;
 }
 
 .columna.izq {
   flex: 3;
-  min-width: 0;
+  min-width: 0;          /* ✅ permite que flex controle el tamaño */
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -91,19 +90,18 @@ h3 {
 .siniestro {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-end;  /* ✅ fuerza todo a la derecha */
   gap: 12px;
 }
 
 .siniestro label {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-end; /* ✅ inputs y textos pegados a la derecha */
   gap: 8px;
   text-align: right;
 }
-
-/* Fecha, lugar y localidad alineados a la derecha */
+/* 📌 Fecha, lugar y localidad alineados a la derecha */
 .lugar {
   width: 100%;
   display: flex;
@@ -120,7 +118,7 @@ h3 {
   white-space: nowrap;
 }
 
-/* Info Auto */
+/* 📌 Info Auto (marca/año en línea, modelo/chasis en columna centrados) */
 .info-auto {
   display: flex;
   flex-direction: column;
@@ -141,15 +139,15 @@ h3 {
 
 .info-auto #modelo,
 .info-auto #chasis{
-  width: 80%;
-  max-width: 80%;
-  padding: 6px 10px;
-}
-
-/* Color/Motor */
+     width: 80%; /* tamaño fijo */
+     max-width: 80%; /* asegura que no se expanda */
+     padding: 6px 10px; /* ajusta padding si quieres que sea más pequeño */
+ }
+  
+/* 📌 Color/Motor columna derecha, Tipo cambio columna izquierda */
 .color {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* ✅ ahora van uno debajo del otro */
   justify-content: flex-end;
   gap: 15px;
   width: 100%;
@@ -158,17 +156,16 @@ h3 {
 
 .color label {
   display: flex;
-  flex-direction: row;
+  flex-direction: in-line;
   gap: 6px;
   flex-wrap: nowrap; 
 }
 
 .color label input {
-  width: 80%;
-  max-width: 80%;
-  padding: 6px 10px;
-}
-
+  width: 80%; /* tamaño fijo */
+  max-width: 80%; /* asegura que no se expanda */
+  padding: 6px 10px; /* ajusta padding si quieres que sea más pequeño */
+ }
 /* Tipo de cambio a la izquierda */
 .color label#cambio,
 .color label[for="cambio"] {
@@ -176,14 +173,14 @@ h3 {
 }
 
 .color label#cambio{
-  text-align: center;
+ text-align: center;
   background-color: #FFF2CC;
   padding: 6px 10px;
 }
 
 .color label input#cambio{
-  width: 15%;
-  padding: 6px 6px;
+  width: 15%; /* tamaño fijo */
+  padding: 6px 6px; /* ajusta padding si quieres que sea más pequeño */
 }
 
 /* Color y Motor a la derecha */
@@ -262,21 +259,16 @@ table {
   max-width: 100%;
   width: 100%;
   white-space: nowrap;
-  overflow-x: auto;
-  display: block;
 }
-
 table td:first-child,
 table th:first-child {
   white-space: normal;
 }
-
 #tablaPiezas1 td:nth-child(3),
 #tablaPiezas1 th:nth-child(3) {
   flex: 1;
   min-width: 110px;
 }
-
 th, td {
   border: 1px solid #000;
   padding: 5px;
@@ -285,7 +277,6 @@ th, td {
   word-wrap: break-word;
   font-size: 0.85em;
 }
-
 td input {
   width: 85%;
   border: none;
@@ -302,7 +293,7 @@ td input {
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
-  overflow-x: auto;
+  overflow-y: auto;
 }
 
 .noti h3 {
@@ -386,57 +377,4 @@ td input {
 .modo-pdf .boton,
 .modo-pdf .clear-button {
   display: none !important;
-}
-
-/* 📌 Ajustes responsive: sin reordenar, solo reduciendo */
-@media (max-width: 1024px) {
-  body {
-    font-size: 0.95em;
-  }
-  h2 {
-    font-size: 1.1em;
-  }
-  .datos {
-    gap: 20px;
-  }
-  .tablas-piezas {
-    gap: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    font-size: 0.9em;
-  }
-  h2 {
-    font-size: 1em;
-    padding: 8px;
-  }
-  #contenidoPDF {
-    padding: 15px;
-  }
-  .datos {
-    gap: 15px;
-  }
-  table {
-    font-size: 0.75em;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 0.85em;
-  }
-  h2 {
-    font-size: 0.9em;
-  }
-  #contenidoPDF {
-    padding: 10px;
-  }
-  table {
-    font-size: 0.7em;
-  }
-  td input {
-    font-size: 0.7em;
-  }
 }
