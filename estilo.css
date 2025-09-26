@@ -169,7 +169,7 @@ h3 {
 /* Tipo de cambio a la izquierda */
 .color label#cambio,
 .color label[for="cambio"] {
-  align-items: flex-start;
+  align-items: center;
 }
 
 .color label#cambio{
