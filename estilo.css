@@ -137,6 +137,13 @@ h3 {
   text-align: center;
 }
 
+.info-auto #modelo,
+.info-auto #chasis{
+     width: 80%; /* tamaño fijo */
+     max-width: 80%; /* asegura que no se expanda */
+     padding: 6px 10px; /* ajusta padding si quieres que sea más pequeño */
+ }
+  
 /* 📌 Color/Motor columna derecha, Tipo cambio columna izquierda */
 .color {
   display: flex;
@@ -169,6 +176,7 @@ h3 {
   width: 40%; /* tamaño fijo */
   max-width: 50%; /* asegura que no se expanda */
   padding: 4px 6px; /* ajusta padding si quieres que sea más pequeño */
+}
 
 /* Color y Motor a la derecha */
 .color label#color,
