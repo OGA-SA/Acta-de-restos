@@ -51,28 +51,29 @@ h3 {
 
 .datos {
   width: 100%;
+  max-width: 1200px;    /* evita que crezca infinito */
   margin: 0 auto 30px auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 35px;
   padding: 10px;
-  height: auto;
   align-items: stretch;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;       /* si no entra, baja */
+  box-sizing: border-box;
 }
 
 .columna.izq {
-  flex: 3;
-  min-width: 0;          /* ✅ permite que flex controle el tamaño */
+  flex: 3 1 60%;         /* crece 3x más, mínimo 60% */
+  min-width: 300px;      /* no se achica más que esto */
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
 .columna.der {
-  flex: 1;
-  min-width: 0;
+  flex: 1 1 30%;         /* ocupa 1x, mínimo 30% */
+  min-width: 200px;      /* no se achica más que esto */
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -150,9 +151,9 @@ h3 {
 .color label {
   display: flex;
   justify-content: flex-end;
-  flex-direction: in-line;
+  flex-direction: row;   /* en línea */
   gap: 6px;
-  flex-wrap: nowrap; 
+  flex-wrap: nowrap;
 }
 
 .color label input {
