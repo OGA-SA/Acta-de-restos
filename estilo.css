@@ -173,8 +173,8 @@ h3 {
 }
 
 .color label input#cambio{
-  width: 40%; /* tamaño fijo */
-  max-width: 50%; /* asegura que no se expanda */
+  width: 20%; /* tamaño fijo */
+  max-width: 30%; /* asegura que no se expanda */
   padding: 4px 6px; /* ajusta padding si quieres que sea más pequeño */
 }
 
