@@ -101,6 +101,7 @@ h3 {
   gap: 8px;
   text-align: right;
 }
+
 /* 📌 Fecha, lugar y localidad alineados a la derecha */
 .lugar {
   width: 100%;
@@ -170,7 +171,7 @@ h3 {
 /* Tipo de cambio a la izquierda */
 .color label#cambio,
 .color label[for="cambio"] {
-   justify-content: center;
+   justify-content: flex-start;
 }
 
 .color label#cambio{
