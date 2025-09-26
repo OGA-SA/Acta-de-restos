@@ -72,8 +72,8 @@ h3 {
 }
 
 .columna.der {
-  flex: 1 1 30%;         /* ocupa 1x, mínimo 30% */
-  min-width: 200px;      /* no se achica más que esto */
+  flex: 1 1 25%;         /* ocupa 1x, mínimo 30% */
+  min-width: 100px;      /* no se achica más que esto */
   display: flex;
   flex-direction: column;
   gap: 30px;
