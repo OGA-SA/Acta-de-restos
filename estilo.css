@@ -261,9 +261,13 @@ table td:first-child,
 table th:first-child {
   white-space: normal;
 }
+
 th.vacio {
   border: none; 
   border-bottom: 2px solid black;
+}
+table th.vacio:first-child{
+  border: none;
 }
 
 th, td {
