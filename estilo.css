@@ -262,6 +262,7 @@ table th:first-child {
   white-space: normal;
 }
 th.vacio {
+  border: none; 
   border-bottom: 2px solid black;
 }
 
