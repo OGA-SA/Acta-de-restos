@@ -249,6 +249,13 @@ label input {
   background-color: #00416d;
 }
 
+.tablas{
+   margin: 0 auto 20px auto;
+  padding: 10px;
+  width: 100%;
+  max-width: 1200px;
+}
+
 .tablaValor {
   display: flex;
   justify-content: center;
