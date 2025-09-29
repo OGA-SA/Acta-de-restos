@@ -249,7 +249,7 @@ label input {
   background-color: #00416d;
 }
 
-tablaValor {
+.tablaValor {
   display: flex;
   justify-content: center;
   border-collapse: separate;   /* 🚨 importante */
