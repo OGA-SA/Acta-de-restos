@@ -285,7 +285,10 @@ td input {
   max-width: 100%;
   box-sizing: border-box;
 }
-
+.tablaValor{
+  border-collapse: separate;   /* 🚨 importante */
+  border-spacing: 0 6px; 
+}
 
 .noti h3 {
   width: 95%;
