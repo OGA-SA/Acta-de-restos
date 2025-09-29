@@ -56,24 +56,24 @@ h3 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 20px;               /* menos separación */
+  gap: 20px;
   padding: 10px;
   align-items: stretch;
-  flex-wrap: nowrap;       /* si no entra, baja */
+  flex-wrap: nowrap;   /* ✅ siempre en la misma fila */
   box-sizing: border-box;
 }
 
 .columna.izq {
-  flex: 2 1 65%;           /* más grande, pero flexible */
-  min-width: 250px;        /* se achica más que antes */
+  flex: 2 1 0;         /* crece el doble que la der */
+  min-width: 200px;    /* límite inferior más chico */
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
 .columna.der {
-  flex: 1 1 35%;           /* ocupa menos, pero flexible */
-  min-width: 180px;        /* asegura espacio mínimo */
+  flex: 1 1 0;         /* ocupa la mitad que la izq */
+  min-width: 150px;    /* límite inferior más chico */
   display: flex;
   flex-direction: column;
   gap: 30px;
