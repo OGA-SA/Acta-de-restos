@@ -272,7 +272,7 @@ label input {
   border-bottom: 2px solid black;
 }
 
-th.vacio:first-child{
+#tablaValor th.vacio:first-child{
   border: none;
 }
 
