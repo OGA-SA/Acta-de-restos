@@ -257,8 +257,6 @@ label input {
 }
 
 .tablaValor {
-  display: flex;
-  justify-content: center;
   border-collapse: separate;   /* 🚨 importante */
   border-spacing: 0 10px; 
   margin: 0 auto;
