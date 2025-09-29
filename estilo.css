@@ -267,7 +267,7 @@ label input {
 }
 
 
-th.vacio {
+#tablaValor th.vacio {
   border: none; 
   border-bottom: 2px solid black;
 }
