@@ -51,12 +51,12 @@ h3 {
 
 .datos {
   width: 100%;
-  max-width: 1200px;    /* evita que crezca infinito */
+  max-width: 1200px;
   margin: 0 auto 30px auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 35px;
+  gap: 20px;               /* menos separación */
   padding: 10px;
   align-items: stretch;
   flex-wrap: nowrap;       /* si no entra, baja */
@@ -64,16 +64,16 @@ h3 {
 }
 
 .columna.izq {
-  flex: 2 0 55%;         /* crece 3x más, mínimo 60% */
-  min-width: 300px;      /* no se achica más que esto */
+  flex: 2 1 65%;           /* más grande, pero flexible */
+  min-width: 250px;        /* se achica más que antes */
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
 .columna.der {
-  flex: 0.5 1 25%;         /* ocupa 1x, mínimo 30% */
-  min-width: 100px;      /* no se achica más que esto */
+  flex: 1 1 35%;           /* ocupa menos, pero flexible */
+  min-width: 180px;        /* asegura espacio mínimo */
   display: flex;
   flex-direction: column;
   gap: 30px;
