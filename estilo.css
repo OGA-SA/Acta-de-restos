@@ -250,8 +250,10 @@ label input {
 }
 
 tablaValor {
+  display: flex;
+  justify-content: center;
   border-collapse: separate;   /* 🚨 importante */
-  border-spacing: 0 6px; 
+  border-spacing: 0 10px; 
   margin: 0 auto;
   table-layout: auto;
   max-width: 100%;
