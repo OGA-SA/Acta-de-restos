@@ -261,6 +261,9 @@ table td:first-child,
 table th:first-child {
   white-space: normal;
 }
+th.vacio {
+  border-bottom: 2px solid black;
+}
 
 th, td {
   border: 1px solid #000;
