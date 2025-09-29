@@ -250,7 +250,8 @@ label input {
 }
 
 tablaValor {
-  border-collapse: collapse;
+  border-collapse: separate;   /* 🚨 importante */
+  border-spacing: 0 6px; 
   margin: 0 auto;
   table-layout: auto;
   max-width: 100%;
@@ -283,10 +284,6 @@ td input {
   padding: 5px;
   max-width: 100%;
   box-sizing: border-box;
-}
-.tablaValor{
-  border-collapse: separate;   /* 🚨 importante */
-  border-spacing: 0 6px; 
 }
 
 .noti h3 {
