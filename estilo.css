@@ -249,7 +249,7 @@ label input {
   background-color: #00416d;
 }
 
-table {
+tablaValor {
   border-collapse: collapse;
   margin: 0 auto;
   table-layout: auto;
@@ -257,16 +257,14 @@ table {
   width: 100%;
   white-space: nowrap;
 }
-table td:first-child,
-table th:first-child {
-  white-space: normal;
-}
 
-.tablaValor th.vacio {
+
+th.vacio {
   border: none; 
   border-bottom: 2px solid black;
 }
-table th.vacio:first-child{
+
+th.vacio:first-child{
   border: none;
 }
 
@@ -278,6 +276,7 @@ th, td {
   word-wrap: break-word;
   font-size: 0.85em;
 }
+
 td input {
   width: 85%;
   border: none;
