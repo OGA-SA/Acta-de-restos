@@ -270,12 +270,12 @@ label input {
 
 
 #tablaValor th.vacio {
-  border: none; 
-  border-bottom: 2px solid black;
+  border: none !important; 
+  border-bottom: 2px solid black !important;
 }
 
 #tablaValor th.vacio:first-child{
-  border: none;
+  border: none !important;
 }
 
 th, td {
