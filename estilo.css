@@ -209,15 +209,10 @@ label input {
 }
 
 .observaciones {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   margin: 0 auto;
-  align-items: stretch;
-  width: 90%;
-  max-width: 90%;
-  padding: 35px 0 35px 0;
-}
+  width: 100%;
+  max-width: 1200px;
+ }
 
 h2.Obs {
   background-color: transparent;
