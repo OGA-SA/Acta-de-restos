@@ -295,6 +295,7 @@ h2.Obs {
   border: none;
   border-bottom: 1px solid black;
   font-size: 0.85em;
+  text-align: left;
 }
 
 #tablaValor th.vacio:first-child,
@@ -309,8 +310,8 @@ h2.Obs {
 }
 
 #tablaValor th {
-  padding: 5px;
-  text-align: left;
+  padding: 10px;
+  text-align: center;
   white-space: nowrap;
   word-wrap: break-word;
   font-size: 0.85em;
