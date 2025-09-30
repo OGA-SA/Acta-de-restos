@@ -35,50 +35,6 @@ h2 {
   max-width: 1200px;
   background-color: #1F4E78;
 }
-.Observaciones { 
-    display: flex; 
-    flex-direction: row; 
-    justify-content: center; 
-    margin: 0 auto; 
-    align-items: stretch; 
-    width: 90%; 
-    max-width: 90%; 
-       }
-
-h2.Obs { 
-  background-color: transparent; 
-  text-align: start; 
-  font-size: 1em; 
-  margin: 0; 
-  height: auto; 
-}
-#nota { 
-  width: 100%; 
-  max-width: 1200px; 
-  height: 200px; 
-  margin-top: 2px; 
-  resize: vertical; 
-  margin: 0; 
-  display: block; 
-  padding: 10px; 
-  font-family: inherit; 
-  font-size: 1em; 
-  } 
-
-/* Botón limpiar */ 
-.clear-button { 
-  margin-top: 8px; 
-  padding: 6px 12px; 
-  background-color: #005f9e; 
-  color: white; 
-  border: none; 
-  border-radius: 4px; 
-  cursor: pointer; 
-} 
-
-.clear-button:hover { 
-  background-color: #00416d; 
-  }
 
 .texto, h3 {
   width: 95%;
@@ -123,6 +79,7 @@ h3 {
   gap: 30px;
 }
 
+
 .siniestro {
   display: flex;
   flex-direction: column;
@@ -155,33 +112,251 @@ h3 {
   white-space: nowrap;
 }
 
-label input { 
-  text-align: center; 
-  background-color: #FFF2CC; 
-  padding: 6px 10px; 
+/* 📌 Info Auto (marca/año en línea, modelo/chasis en columna centrados) */
+.info-auto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
-.lugar input { 
-  padding: 6px 10px; 
-  width: 100%; 
-  max-width: 600px; 
-  background-color: #FFC000; 
+#marca {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
 }
 
-.color label#cambio{ 
-  text-align: center; 
-  border: 1px solid #000; 
-  padding: 6px 10px; 
-  justify-content: 
-  flex-start; 
-} 
+#modelo, #chasis {
+  text-align: center;
+}
 
-.color label input#cambio{ 
-  width: 15%; /* tamaño fijo */ 
-  padding: 6px 6px;
-  background-color: #5B9BD5; 
-}                                                                                                                                           padding: 6px 6px; /* ajusta padding si quieres que sea más pequeño */ 
-                                                                                                                                             background-color: #5B9BD5; 
+.info-auto label input#modelo,
+.info-auto label input#chasis{
+     width: 80%; /* tamaño fijo */
+     max-width: 80%; /* asegura que no se expanda */
+     padding: 6px 10px; /* ajusta padding si quieres que sea más pequeño */
+ }
+  
+/* 📌 Color/Motor columna derecha, Tipo cambio columna izquierda */
+.color {
+  display: flex;
+  flex-direction: column; /* ✅ ahora van uno debajo del otro */
+  justify-content: flex-end;
+  gap: 15px;
+  width: 100%;
+  margin: 40px auto 20px 0;
+}
+
+.color label {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;   /* en línea */
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+
+.color label input {
+  width: 80%; /* tamaño fijo */
+  max-width: 80%; /* asegura que no se expanda */
+  padding: 6px 10px; /* ajusta padding si quieres que sea más pequeño */
+ }
+/* Tipo de cambio a la izquierda */
+.color label#cambio,
+.color label[for="cambio"] {
+   justify-content: flex-start;
+}
+
+.color label#cambio{
+ text-align: center;
+ border: 1px solid #000;
+ padding: 6px 10px;
+  justify-content: flex-start;
+}
+
+.color label input#cambio{
+  width: 15%; /* tamaño fijo */
+  padding: 6px 6px; /* ajusta padding si quieres que sea más pequeño */
+  background-color: #5B9BD5;
+}
+
+/* Color y Motor a la derecha */
+.color label#color,
+.color label#Motor,
+.color label[for="color"],
+.color label[for="Motor"] {
+  align-items: flex-end;
+}
+
+label {
+  font-weight: bold;
+  white-space: nowrap;
+  gap: 20px;
+}
+
+label input {
+  text-align: center;
+  background-color: #FFF2CC;
+  padding: 6px 10px;
+}
+
+.lugar input {
+  padding: 6px 10px;
+  width: 100%;
+  max-width: 600px;
+  background-color: #FFC000;
+}
+
+.Observaciones {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: stretch;
+  width: 90%;
+  max-width: 90%;
+}
+
+h2.Obs {
+  background-color: transparent;
+  text-align: start;
+  font-size: 1em;
+  margin: 0;
+  height: auto;
+}
+
+#nota {
+  width: 100%;
+  max-width: 1200px;
+  height: 200px;
+  margin-top: 2px;
+  resize: vertical;
+  margin: 0;
+  display: block;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1em;
+}
+
+/* Botón limpiar */
+.clear-button {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background-color: #005f9e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.clear-button:hover {
+  background-color: #00416d;
+}
+
+.tablas{
+  margin: 0 auto 20px auto;
+  padding: 10px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+#tablaValor {
+  border-collapse: separate;   /* 🚨 importante */
+  border-spacing: 0 10px; 
+  margin: 0 auto;
+  table-layout: auto;
+  max-width: 100%;
+  width: 100%;
+  white-space: nowrap;
+}
+
+
+/* Todos los th.vacio → solo borde inferior */
+#tablaValor tr th.vacio {
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+/* Primer th.vacio de cada fila → sin bordes en absoluto */
+#tablaValor tr th.vacio:first-child {
+  border: none;
+}
+
+#tablaValor th {
+  border: 1px solid #000;
+  padding: 5px;
+  text-align: left;
+  white-space: nowrap;
+  word-wrap: break-word;
+  font-size: 0.85em;
+}
+
+.noti h3 {
+  width: 95%;
+  border: none;
+}
+
+/* Botón generar PDF */
+.boton {
+  display: block;
+  margin: 20px auto;
+  padding: 6px 12px;
+  background-color: #005f9e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.boton:hover {
+  background-color: #00416d;
+}
+
+/* Estilos para PDF */
+.modo-pdf #contenidoPDF {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  margin-top: 0;
+  padding: 10mm;
+  background: white;
+  box-sizing: border-box;
+  transform: none !important;
+}
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+  }
+}
+.no-break {
+  page-break-inside: avoid;
+}
+.modo-pdf body {
+  margin: 0;
+}
+.modo-pdf h2 {
+  font-size: 0.9em;
+}
+.modo-pdf table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  word-break: break-word;
+  page-break-inside: auto;
+}
+.modo-pdf tr {
+  page-break-inside: avoid;
+  page-break-after: auto;
+}
+.modo-pdf td,
+.modo-pdf th {
+  padding: 4px;
+  font-size: 8pt;
+  white-space: normal;
+}
+
+.modo-pdf .boton,
+.modo-pdf .clear-button {
+  display: none !important;
+}                                                                                                                       background-color: #5B9BD5; 
                                                                                                                                             }
 
 /* 📌 Info Auto (marca/año en línea, modelo/chasis en columna centrados) */
