@@ -269,13 +269,14 @@ h2.Obs {
 #tablaValor {
   border-collapse: separate;   /* 🚨 importante */
   border-spacing: 0 10px; 
-  margin: 0 auto;
-  table-layout: auto;
+  margin: 0;
+  table-layout: fixed;
   max-width: 100%;
   width: 100%;
   max-width: 1200px;
   white-space: nowrap;
 }
+
 
 #tablaValor th input,
 #tablaValor td input {
