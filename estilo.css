@@ -277,7 +277,7 @@ h2.Obs {
 }
 
 /* Primer th.vacio de cada fila → sin bordes en absoluto */
-#tablaValor tr th.vacio:first-child {
+#tablaValor th.vacio:first-child {
   border: none;
 }
 
