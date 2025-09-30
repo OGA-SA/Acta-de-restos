@@ -274,7 +274,7 @@ h2.Obs {
   max-width: 1200px;
   display: block;
   gap: 10px;
-  table-layout: auto;          /* columnas distribuidas */
+  table-layout: fixed;        /* columnas distribuidas */
   white-space: nowrap;          /* evita saltos de línea */
 }
 
