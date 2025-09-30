@@ -217,7 +217,7 @@ label input {
   max-width: 90%;
 }
 
-.Obs {
+h2.Obs {
   background-color: transparent;
   text-align: start;
   font-size: 1em;
