@@ -253,7 +253,7 @@ h2.Obs {
 }
 
 .tablas{
-   margin: 0 auto 20px auto;
+  margin: 0 auto 20px auto;
   padding: 10px;
   width: 100%;
   max-width: 1200px;
@@ -261,7 +261,7 @@ h2.Obs {
 
 #tablaValor {
   border-collapse: separate;   /* 🚨 importante */
-  border-spacing: 0 10px; 
+  border-spacing: 3 10px; 
   margin: 0 auto;
   table-layout: auto;
   max-width: 100%;
@@ -270,34 +270,25 @@ h2.Obs {
 }
 
 
+/* Todos los th.vacio → solo borde inferior */
 #tablaValor th.vacio {
-  border: none !important; 
-  border-bottom: 2px solid black !important;
+  border: none;
+  border-bottom: 2px solid black;
 }
 
-#tablaValor th.vacio:first-child{
-  border: none !important;
+/* Primer th.vacio de cada fila → sin bordes en absoluto */
+#tablaValor tr th.vacio:first-child {
+  border: none;
 }
 
-#tablaValor th:not(.vacio),
+#tablaValor th, 
 #tablaValor td {
   border: 1px solid #000;
-}
-
-th, td {
   padding: 5px;
   text-align: left;
   white-space: nowrap;
   word-wrap: break-word;
   font-size: 0.85em;
-}
-
-td input {
-  width: 85%;
-  border: none;
-  padding: 5px;
-  max-width: 100%;
-  box-sizing: border-box;
 }
 
 .noti h3 {
