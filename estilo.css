@@ -124,6 +124,21 @@ label input {
   background-color: #FFC000; 
 }
 
+.color label#cambio{ 
+  text-align: center; 
+  border: 1px solid #000; 
+  padding: 6px 10px; 
+  justify-content: 
+  flex-start; 
+} 
+
+.color label input#cambio{ 
+  width: 15%; /* tamaño fijo */ 
+  padding: 6px 6px;
+  background-color: #5B9BD5; 
+}                                                                                                                                           padding: 6px 6px; /* ajusta padding si quieres que sea más pequeño */ 
+                                                                                                                                             background-color: #5B9BD5; 
+                                                                                                                                            }
 
 /* 📌 Info Auto (marca/año en línea, modelo/chasis en columna centrados) */
 .info-auto {
