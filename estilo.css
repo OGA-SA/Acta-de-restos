@@ -215,6 +215,7 @@ label input {
   align-items: stretch;
   width: 90%;
   max-width: 90%;
+  margin-top: 25px;
 }
 
 h2.Obs {
