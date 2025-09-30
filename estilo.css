@@ -271,13 +271,13 @@ h2.Obs {
 
 
 /* Todos los th.vacio → solo borde inferior */
-#tablaValor tr th.vacio {
+#tablaValor th.vacio {
   border: none;
   border-bottom: 2px solid black;
 }
 
 /* Primer th.vacio de cada fila → sin bordes en absoluto */
-#tablaValor th.vacio:first-child {
+#tablaValor tr th.vacio:first-child {
   border: none;
 }
 
