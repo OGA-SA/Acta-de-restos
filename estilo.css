@@ -269,6 +269,12 @@ h2.Obs {
   white-space: nowrap;
 }
 
+#tablaValor th input,
+#tablaValor td input {
+  border: none;
+  outline: none;
+  background-color: transparent; /* opcional, si no querés color */
+}
 
 /* Todos los th.vacio → solo borde inferior */
 #tablaValor th.vacio {
