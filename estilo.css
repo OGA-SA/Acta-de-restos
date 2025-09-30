@@ -269,11 +269,13 @@ h2.Obs {
   display: block;
   width: 100%;
 }
+
 #tablaValor {
   border-collapse: separate;   /* mantiene spacing vertical */
   border-spacing: 0 10px; 
   margin: 0;              /* centra la tabla */
-  width: 100%;                  /* igual que Observaciones */
+  width: 100%;
+  min-width: 100%;   
   table-layout: fixed;          /* columnas distribuidas */
   white-space: nowrap;          /* evita saltos de línea */
 }
