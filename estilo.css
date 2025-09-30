@@ -292,7 +292,7 @@ h2.Obs {
   border-bottom: 1px solid black;
   font-size: 0.85em;
   text-align: left;
-  width: 60%;
+  
 }
 
 #tablaValor th.vacio:first-child,
@@ -304,6 +304,7 @@ h2.Obs {
 #tablaValor th:not(:first-child),
 #tablaValor td:not(:first-child) {
   border: 1px solid #000;
+  width: 60%;
 }
 
 #tablaValor th {
