@@ -315,6 +315,11 @@ h2.Obs {
   font-size: 0.85em;
 }
 
+#tablaValor th,
+#tablaValor td {
+  width: calc(100% / var(--cols));  /* todas las columnas igual de anchas */
+  text-align: center;
+}
 
 .noti h3 {
   width: 95%;
