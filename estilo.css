@@ -229,6 +229,7 @@ h2.Obs {
   width: 100%;
   max-width: 1200px;
   height: 200px;
+  margin-top: 2px;
   resize: vertical;
   margin: 0;
   display: block;
