@@ -161,6 +161,7 @@ h3 {
   max-width: 80%; /* asegura que no se expanda */
   padding: 6px 10px; /* ajusta padding si quieres que sea más pequeño */
  }
+
 /* Tipo de cambio a la izquierda */
 .color label#cambio,
 .color label[for="cambio"] {
@@ -282,6 +283,7 @@ h2.Obs {
 #tablaValor td:first-child {
   border: none;
   border-bottom: 2px solid black;
+  font-size: 1em;
 }
 
 #tablaValor th.vacio:first-child,
