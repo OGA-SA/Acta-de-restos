@@ -292,6 +292,7 @@ h2.Obs {
   border-bottom: 1px solid black;
   font-size: 0.85em;
   text-align: left;
+  width: 40%;
 }
 
 #tablaValor th.vacio:first-child,
