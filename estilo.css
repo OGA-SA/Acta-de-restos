@@ -279,8 +279,12 @@ h2.Obs {
   border: none !important;
 }
 
-th, td {
+#tablaValor th:not(.vacio),
+#tablaValor td {
   border: 1px solid #000;
+}
+
+th, td {
   padding: 5px;
   text-align: left;
   white-space: nowrap;
