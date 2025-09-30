@@ -262,7 +262,10 @@ h2.Obs {
   width: 100%;
   max-width: 1200px;
 }
-
+.tablas > * {
+  display: block;
+  width: 100%;
+}
 #tablaValor {
   border-collapse: separate;   /* 🚨 importante */
   border-spacing: 0 10px; 
