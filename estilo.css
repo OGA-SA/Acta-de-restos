@@ -261,20 +261,20 @@ h2.Obs {
   gap: 40px;
   width: 100%;
   max-width: 1200px;
+  overflow-x: auto;
 }
 .tablas > * {
   display: block;
   width: 100%;
 }
 #tablaValor {
-  border-collapse: separate;   /* 🚨 importante */
+  border-collapse: separate;   /* mantiene spacing vertical */
   border-spacing: 0 10px; 
-  margin: 0;
-  table-layout: fixed;
-  max-width: 100%;
-  width: 100%;
-  max-width: 1200px;
-  white-space: nowrap;
+  margin: 0 auto;              /* centra la tabla */
+  width: 90%;                  /* igual que Observaciones */
+  max-width: 90%;              /* igual que Observaciones */
+  table-layout: fixed;          /* columnas distribuidas */
+  white-space: nowrap;          /* evita saltos de línea */
 }
 
 
