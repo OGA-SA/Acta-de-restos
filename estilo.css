@@ -250,13 +250,14 @@ h2.Obs {
   border-radius: 4px;
   cursor: pointer;
 }
+
 .clear-button:hover {
   background-color: #00416d;
 }
 
 .tablas{
-  margin: 0 auto 20px auto;
-  padding: 30px;
+  display: flex;
+  gap: 40px;
   width: 100%;
   max-width: 1200px;
 }
@@ -282,7 +283,7 @@ h2.Obs {
 #tablaValor th:first-child,
 #tablaValor td:first-child {
   border: none;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
   font-size: 0.85em;
 }
 
