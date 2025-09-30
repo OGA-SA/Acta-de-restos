@@ -271,7 +271,7 @@ h2.Obs {
 
 
 /* Todos los th.vacio → solo borde inferior */
-#tablaValor th.vacio {
+#tablaValor tr th.vacio {
   border: none;
   border-bottom: 2px solid black;
 }
