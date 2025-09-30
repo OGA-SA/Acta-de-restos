@@ -35,6 +35,50 @@ h2 {
   max-width: 1200px;
   background-color: #1F4E78;
 }
+.Observaciones { 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; 
+    margin: 0 auto; 
+    align-items: stretch; 
+    width: 90%; 
+    max-width: 90%; 
+       }
+
+h2.Obs { 
+  background-color: transparent; 
+  text-align: start; 
+  font-size: 1em; 
+  margin: 0; 
+  height: auto; 
+}
+#nota { 
+  width: 100%; 
+  max-width: 1200px; 
+  height: 200px; 
+  margin-top: 2px; 
+  resize: vertical; 
+  margin: 0; 
+  display: block; 
+  padding: 10px; 
+  font-family: inherit; 
+  font-size: 1em; 
+  } 
+
+/* Botón limpiar */ 
+.clear-button { 
+  margin-top: 8px; 
+  padding: 6px 12px; 
+  background-color: #005f9e; 
+  color: white; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+} 
+
+.clear-button:hover { 
+  background-color: #00416d; 
+  }
 
 .texto, h3 {
   width: 95%;
