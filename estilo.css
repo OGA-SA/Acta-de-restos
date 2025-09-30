@@ -286,6 +286,7 @@ h2.Obs {
 #tablaValor td input {
   border: none;
   outline: none;
+  text-align: center;
   background-color: transparent; /* opcional */
 }
 
