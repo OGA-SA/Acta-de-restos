@@ -208,7 +208,7 @@ label input {
   background-color: #FFC000;
 }
 
-.Observaciones {
+.observaciones {
   display: flex;
   flex-direction: row;
   justify-content: center;
