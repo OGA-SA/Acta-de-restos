@@ -269,11 +269,10 @@ h2.Obs {
   border-spacing: 0 10px; 
   margin: 0 auto;              /* centra la tabla */
   width: 100%;
-  background-color: blue;
   max-width: 1200px;
   display: block;
   gap: 10px;
-  table-layout: fixed;        /* columnas distribuidas */
+  table-layout: inherit;        /* columnas distribuidas */
   white-space: nowrap;          /* evita saltos de línea */
 }
 
