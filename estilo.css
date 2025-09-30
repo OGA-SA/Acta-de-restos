@@ -273,6 +273,7 @@ h2.Obs {
   table-layout: auto;
   max-width: 100%;
   width: 100%;
+  max-width: 1200px;
   white-space: nowrap;
 }
 
