@@ -316,12 +316,12 @@ h2.Obs {
 
 #tablaValor th:first-child,
 #tablaValor td:first-child {
-  width: 60%;  /* más ancha */
+  width: 90%;  /* más ancha */
 }
 
 #tablaValor th:not(:first-child),
 #tablaValor td:not(:first-child) {
-  width: 20%;  /* más chicas */
+  width: 30%;  /* más chicas */
 }
 
 .noti h3 {
