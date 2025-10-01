@@ -315,7 +315,9 @@ h2.Obs {
     
 }
 #tablaFinal th:first-child,
-#tablaFinal td:first-child {
+#tablaFinal td:first-child 
+#tablaFinal th:nth-child(3),
+#tablaFinal td:nth-child(3){
   border: none;
   border-bottom: 1px solid black;
   font-size: 0.85em;
