@@ -305,8 +305,7 @@ h2.Obs {
 #tablaValor th:not(:first-child),
 #tablaValor td:not(:first-child) {
   border: 1px solid #000;
-  width: 60%;
-}
+  }
 
 #tablaValor th {
   padding: 10px;
