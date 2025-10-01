@@ -358,6 +358,16 @@ h2.Obs {
   width: 30%;  /* más chicas */
 }
 
+#tablaValor th:first-child,
+#tablaValor td:first-child {
+  width: 90%;  /* más ancha */
+}
+
+#tablaFinal th:not(:first-child),
+#tablaFinal td:not(:first-child) {
+  width: 30%;  /* más chicas */
+}
+
 .noti h3 {
   width: 95%;
   border: none;
