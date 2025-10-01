@@ -276,6 +276,26 @@ h2.Obs {
   white-space: nowrap;          /* evita saltos de línea */
 }
 
+#tablaFinal{
+  border-collapse: separate;   /* mantiene spacing vertical */
+  border-spacing: 0 8px; 
+  margin: 0 auto;              /* centra la tabla */
+  width: 100%;
+  max-width: 1200px;
+  display: block;
+  gap: 10px;
+  table-layout: inherit;        /* columnas distribuidas */
+  white-space: nowrap; 
+}
+
+#tablaFinal th input,
+#tablaFinal td input{
+  border: none;
+  outline: none;
+  text-align: center;
+  background-color: transparent; /* opcional */
+}
+
 
 #tablaValor th input,
 #tablaValor td input {
@@ -294,6 +314,13 @@ h2.Obs {
   text-align: left;
     
 }
+#tablaFinal th:first-child,
+#tablaFinal td:first-child {
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 0.85em;
+  text-align: left;
+   }
 
 #tablaValor th.vacio:first-child,
 #tablaValor td.vacio:first-child {
@@ -303,6 +330,11 @@ h2.Obs {
 /* ✅ Todas las demás columnas → 4 bordes */
 #tablaValor th:not(:first-child),
 #tablaValor td:not(:first-child) {
+  border: 1px solid #000;
+  }
+
+#tablaFinal th:not(:first-child),
+#tablaFinal td:not(:first-child) {
   border: 1px solid #000;
   }
 
