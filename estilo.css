@@ -338,6 +338,7 @@ h2.Obs {
 #tablaFinal td:not(:first-child) {
   border: 1px solid #000;
   width: 25%;
+  background-color: #BDD7EE;
   }
 
 #tablaValor th {
