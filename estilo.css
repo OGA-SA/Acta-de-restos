@@ -266,7 +266,7 @@ h2.Obs {
 
 #tablaValor {
   border-collapse: separate;   /* mantiene spacing vertical */
-  border-spacing: 0 10px; 
+  border-spacing: 0 8px; 
   margin: 0 auto;              /* centra la tabla */
   width: 100%;
   max-width: 1200px;
@@ -292,6 +292,7 @@ h2.Obs {
   border-bottom: 1px solid black;
   font-size: 0.85em;
   text-align: left;
+  min-width: 50%;
   
 }
 
