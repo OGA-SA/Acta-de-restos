@@ -288,7 +288,6 @@ h2.Obs {
   white-space: nowrap; 
 }
 
-#tablaFinal th input,
 #tablaFinal td input{
   border: none;
   outline: none;
@@ -314,9 +313,8 @@ h2.Obs {
   text-align: left;
     
 }
-#tablaFinal th:first-child,
+
 #tablaFinal td:first-child 
-#tablaFinal th:nth-child(3),
 #tablaFinal td:nth-child(3){
   border: none;
   border-bottom: 1px solid black;
@@ -335,7 +333,7 @@ h2.Obs {
   border: 1px solid #000;
   }
 
-#tablaFinal th:not(:first-child),
+
 #tablaFinal td:not(:first-child) {
   border: 1px solid #000;
   }
@@ -358,14 +356,13 @@ h2.Obs {
   width: 30%;  /* más chicas */
 }
 
-#tablaValor th:first-child,
-#tablaValor td:first-child {
-  width: 90%;  /* más ancha */
+
+#tablaFinal td:first-child {
+  width: 80%;  /* más ancha */
 }
 
-#tablaFinal th:not(:first-child),
 #tablaFinal td:not(:first-child) {
-  width: 30%;  /* más chicas */
+  width: 20%;  /* más chicas */
 }
 
 .noti h3 {
