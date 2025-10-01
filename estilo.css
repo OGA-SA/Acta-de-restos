@@ -311,7 +311,13 @@ h2.Obs {
   border-bottom: 1px solid black;
   font-size: 0.85em;
   text-align: left;
-    
+ }
+
+#tablaFinal td.horas {
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 0.85em;
+  text-align: left;
 }
 
 #tablaFinal td:first-child, 
