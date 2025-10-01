@@ -314,7 +314,7 @@ h2.Obs {
     
 }
 
-#tablaFinal td:first-child 
+#tablaFinal td:first-child, 
 #tablaFinal td:nth-child(3){
   border: none;
   border-bottom: 1px solid black;
