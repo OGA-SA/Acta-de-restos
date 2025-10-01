@@ -315,11 +315,12 @@ h2.Obs {
 }
 
 #tablaFinal td:first-child, 
-#tablaFinal td:nth-child(3){
+#tablaFinal td:nth-child(2){
   border: none;
   border-bottom: 1px solid black;
   font-size: 0.85em;
   text-align: left;
+  width: 40%;
    }
 
 #tablaValor th.vacio:first-child,
@@ -336,6 +337,7 @@ h2.Obs {
 
 #tablaFinal td:not(:first-child) {
   border: 1px solid #000;
+  width: 25%;
   }
 
 #tablaValor th {
@@ -356,14 +358,6 @@ h2.Obs {
   width: 30%;  /* más chicas */
 }
 
-
-#tablaFinal td:first-child {
-  width: 80%;  /* más ancha */
-}
-
-#tablaFinal td:not(:first-child) {
-  width: 20%;  /* más chicas */
-}
 
 .noti h3 {
   width: 95%;
