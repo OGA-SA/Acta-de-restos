@@ -292,8 +292,7 @@ h2.Obs {
   border-bottom: 1px solid black;
   font-size: 0.85em;
   text-align: left;
-  min-width: 50%;
-  
+    
 }
 
 #tablaValor th.vacio:first-child,
@@ -317,12 +316,12 @@ h2.Obs {
 
 #tablaValor th:first-child,
 #tablaValor td:first-child {
-  width: 40%;  /* más ancha */
+  width: 60%;  /* más ancha */
 }
 
 #tablaValor th:not(:first-child),
 #tablaValor td:not(:first-child) {
-  width: 30%;  /* más chicas */
+  width: 20%;  /* más chicas */
 }
 
 .noti h3 {
