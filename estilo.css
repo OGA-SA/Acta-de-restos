@@ -343,7 +343,7 @@ h2.Obs {
   }
 
 
-#tablaFinal td:not(:first-child) {
+#tablaFinal td:not(:DESARME) {
   border: 1px solid #000;
   width: 25%;
   background-color: #BDD7EE;
@@ -434,8 +434,7 @@ h2.Obs {
 .modo-pdf .boton,
 .modo-pdf .clear-button {
   display: none !important;
-}                                                                                                                       background-color: #5B9BD5; 
-                                                                                                                                            }
+}                                                                                                                     
 
 /* 📌 Info Auto (marca/año en línea, modelo/chasis en columna centrados) */
 .info-auto {
