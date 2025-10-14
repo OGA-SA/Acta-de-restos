@@ -314,7 +314,7 @@ h2.Obs {
  }
 
 
-#tablaFinal td:first-child{
+#tablaFinal td.desarme{
   border: none;
   border-bottom: 1px solid black;
   font-size: 0.85em;
