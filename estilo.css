@@ -63,7 +63,7 @@ h3 {
 }
 
 .columna.izq {
-  flex: 2;              /* ✅ ocupa aproximadamente 2/3 */
+  flex: 3;              /* ✅ ocupa aproximadamente 2/3 */
   min-width: 60%;       /* ✅ ancho mínimo */
   display: flex;
   flex-direction: column;
