@@ -50,32 +50,33 @@ h3 {
 }
 
 .datos {
-  width: 100%;
-  margin: 0 auto 30px auto;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;              /* ✅ permite que se ajusten sin superponerse */
+  width: 100%;
+  max-width: 100%;              /* ✅ no se sale del padre */
+  margin: 0 auto 30px auto;
   box-sizing: border-box;
-  padding: 0;            /* ✅ sin padding adicional */
-  max-width: 100%;       /* ✅ ocupa solo el ancho del padre */
 }
+
 .columna.izq {
-  flex: 3;              /* ✅ ocupa aproximadamente 2/3 */
-  min-width: 60%;       /* ✅ ancho mínimo */
+  flex: 2 1 60%;                /* ✅ ocupa aprox. 60% */
+  min-width: 400px;             /* ✅ evita que colapse demasiado */
   display: flex;
   flex-direction: column;
   gap: 30px;
+  box-sizing: border-box;
 }
 
 .columna.der {
-  flex: 1;              /* ✅ ocupa aproximadamente 1/3 */
-  min-width: 35%;       /* ✅ ancho mínimo */
+  flex: 1 1 35%;                /* ✅ ocupa aprox. 35% */
+  min-width: 280px;             /* ✅ previene solapamiento */
   display: flex;
   flex-direction: column;
   gap: 30px;
+  box-sizing: border-box;
 }
 
 .siniestro {
