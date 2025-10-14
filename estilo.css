@@ -322,8 +322,7 @@ h2.Obs {
   background-color: none;
 }
 
-#tablaFinal td:first-child, 
-#tablaFinal td:nth-child(2){
+#tablaFinal td:first-child{
   border: none;
   border-bottom: 1px solid black;
   font-size: 0.85em;
