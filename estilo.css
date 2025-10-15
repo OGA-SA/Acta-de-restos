@@ -298,11 +298,14 @@ h2.Obs {
 
 #tablaValor th input,
 #tablaValor td input {
+  width: 100%;
+  box-sizing: border-box; /* asegura que padding y border no agranden el input */
   border: none;
   outline: none;
   text-align: center;
-  background-color: transparent; /* opcional */
-}
+  background-color: transparent;
+  height: 28px; /* opcional: da altura uniforme */
+  }
 
 /* ✅ Primera columna → solo borde inferior */
 #tablaValor th:first-child,
