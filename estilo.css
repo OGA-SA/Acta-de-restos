@@ -283,8 +283,7 @@ h2.Obs {
   width: 100%;
   max-width: 1200px;
   display: block;
-  gap: 10px;
-  table-layout: inherit;        /* columnas distribuidas */
+  table-layout: fixed;        /* columnas distribuidas */
   white-space: nowrap; 
 }
 
