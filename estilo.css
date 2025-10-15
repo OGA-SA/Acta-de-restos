@@ -253,7 +253,6 @@ h2.Obs {
 .tablas{
   display: flex;
   flex-direction: column;
-  gap: 40px;
   width: 100%;
   overflow-x: auto;
   margin: 0 auto;
