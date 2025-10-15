@@ -286,15 +286,6 @@ h2.Obs {
 }
 
 #tablaFinal td input{
-  border: none;
-  outline: none;
-  text-align: center;
-  background-color: transparent; /* opcional */
-}
-
-
-#tablaValor th input,
-#tablaValor td input {
   width: 100%;
   box-sizing: border-box; /* asegura que padding y border no agranden el input */
   border: none;
@@ -303,6 +294,15 @@ h2.Obs {
   background-color: transparent;
   height: 28px; /* opcional: da altura uniforme */
   }
+
+
+#tablaValor th input,
+#tablaValor td input {
+  border: none;
+  outline: none;
+  text-align: center;
+  background-color: transparent;
+   }
 
 /* ✅ Primera columna → solo borde inferior */
 #tablaValor th:first-child,
