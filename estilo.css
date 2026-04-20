@@ -1,433 +1,427 @@
+:root {
+  --page-width: 1100px;
+  --page-padding-x: 42px;
+  --azul-titulo: #385978;
+  --amarillo-fuerte: #ffc000;
+  --amarillo-suave: #fff2cc;
+  --rosa-suave: #f3d9c8;
+  --gris-cabecera: #d9e1f2;
+  --azul-celda: #a9c4df;
+  --borde: #1d1d1d;
+}
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
+  background: #f3f4f6;
+  font-family: Calibri, Arial, sans-serif;
+  color: #111;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.app-shell {
   width: 100%;
-  height: 100%;
-  font-family: Comic Sans MS;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 16px;
+}
+
+#escalado {
+  --scale: 1;
+  width: calc(var(--page-width) * var(--scale));
+  margin: 0 auto;
+  position: relative;
 }
 
 #contenidoPDF {
+  width: var(--page-width);
+  padding: 18px var(--page-padding-x) 28px;
   background: #fff;
-  padding: 20px 25px 30px 25px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  border: 1px solid #d7d7d7;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  transform-origin: top left;
+  transform: scale(var(--scale));
 }
 
-h2 {
+.titulo-principal {
+  margin-bottom: 22px;
+}
+
+.titulo-principal h1 {
+  margin: 0;
+  padding: 14px 12px 12px;
+  background: var(--azul-titulo);
+  color: #fff;
   text-align: center;
-  margin: 0 auto 20px auto;
-  padding: 10px;
-  width: 100%;
-  max-width: 1200px;
-  background-color: #1F4E78;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
 }
 
-.texto, h3 {
-  width: 95%;
-  max-width: 1200px;
-  margin: auto;
+.encabezado {
+  margin-bottom: 16px;
 }
 
-h3 {
+.fecha-row {
+  display: grid;
+  grid-template-columns: 1fr auto 440px 1fr;
+  align-items: end;
+  margin-bottom: 26px;
+}
+
+.etiqueta-inline {
+  grid-column: 2;
+  justify-self: end;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  margin-right: 24px;
+}
+
+.fecha-valor {
+  grid-column: 3;
+  min-height: 41px;
+  border-bottom: 4px solid #000;
   text-align: center;
-  border: 1px solid black;
-  padding: 20px;
-  margin: 20px auto;
+  font-size: 24px;
+  font-style: italic;
+  line-height: 37px;
 }
 
-.datos {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-  flex-wrap: wrap;              /* ✅ permite que se ajusten sin superponerse */
+.top-grid {
+  display: grid;
+  grid-template-columns: 56% 38%;
+  column-gap: 34px;
+  row-gap: 22px;
+  align-items: end;
+}
+
+.campo,
+.fila-marca,
+.tipo-cambio-wrap {
   width: 100%;
-  max-width: 100%;              /* ✅ no se sale del padre */
-  margin: 0 auto 30px auto;
-  box-sizing: border-box;
 }
 
-.columna.izq {
-  flex: 2 1 60%;                /* ✅ ocupa aprox. 60% */
-  min-width: 400px;             /* ✅ evita que colapse demasiado */
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  box-sizing: border-box;
+.campo {
+  display: grid;
+  align-items: center;
 }
 
-.columna.der {
-  flex: 1 1 35%;                /* ✅ ocupa aprox. 35% */
-  min-width: 280px;             /* ✅ previene solapamiento */
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  box-sizing: border-box;
+.campo-ancho {
+  grid-template-columns: 215px 1fr;
 }
 
-.siniestro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;  /* ✅ fuerza todo a la derecha */
-  gap: 12px;
+.campo-corto {
+  grid-template-columns: 150px 1fr;
 }
 
-.siniestro label {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end; /* ✅ inputs y textos pegados a la derecha */
-  gap: 30px;
-  text-align: right;
+.fila-marca {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  column-gap: 18px;
 }
 
-
-/* 📌 Fecha, lugar y localidad alineados a la derecha */
-.lugar {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 12px;
-  margin: 0 auto 25px 0;
+.marca-principal {
+  grid-template-columns: 95px 1fr;
 }
 
-.lugar label {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
+.marca-anio {
+  grid-template-columns: 0 1fr;
+}
+
+.campo-label,
+.recuperable-grid label,
+.tipo-cambio-label,
+.firma-linea,
+.uso-bse {
+  font-size: 20px;
+  font-weight: 700;
   white-space: nowrap;
 }
 
-/* 📌 Info Auto (marca/año en línea, modelo/chasis en columna centrados) */
-.info-auto {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+.campo-label {
+  text-align: right;
+  padding-right: 2px;
 }
 
-#marca {
-  display: flex;
-  flex-direction: row;
+.campo input,
+.tipo-cambio-input,
+#tablaValor input,
+#nota,
+.recuperable-grid select,
+.recuperable-grid input {
+  width: 100%;
+  border: 2px solid var(--borde);
+  outline: none;
+  font: inherit;
+}
+
+.campo input,
+.tipo-cambio-input {
+  height: 42px;
+  padding: 6px 12px;
+  font-size: 19px;
+  text-align: center;
+  background: var(--amarillo-suave);
+}
+
+.campo-ancho input {
+  background: var(--amarillo-fuerte);
+}
+
+.campo-rosado input {
+  background: var(--rosa-suave);
+}
+
+.inline-duo {
+  display: grid;
+  grid-template-columns: 1fr 98px;
   gap: 10px;
+}
+
+.tipo-cambio-wrap {
+  justify-self: start;
+  width: 72%;
+  display: grid;
+  grid-template-columns: 1fr 168px;
+}
+
+.tipo-cambio-label {
+  border: 2px solid var(--borde);
+  border-right: 0;
+  height: 42px;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-#modelo, #chasis {
-  text-align: center;
+.tipo-cambio-input {
+  background: #5f96cb;
 }
 
-.info-auto label input#modelo,
-.info-auto label input#chasis{
-     width: 80%; /* tamaño fijo */
-     max-width: 80%; /* asegura que no se expanda */
-     padding: 6px 10px; /* ajusta padding si quieres que sea más pequeño */
- }
-  
-/* 📌 Color/Motor columna derecha, Tipo cambio columna izquierda */
-.color {
-  display: flex;
-  flex-direction: column; /* ✅ ahora van uno debajo del otro */
-  justify-content: flex-end;
-  gap: 15px;
-  width: 100%;
-  margin: 40px auto 20px 0;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
-.color label {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: row;   /* en línea */
-  gap: 6px;
-  flex-wrap: nowrap;
-}
-
-.color label input {
-  width: 80%; /* tamaño fijo */
-  max-width: 80%; /* asegura que no se expanda */
-  padding: 6px 10px; /* ajusta padding si quieres que sea más pequeño */
- }
-
-/* Tipo de cambio a la izquierda */
-.color label#cambio,
-.color label[for="cambio"] {
-   justify-content: flex-start;
-}
-
-.color label#cambio{
- text-align: center;
- border: 1px solid #000;
- padding: 6px 10px;
-  justify-content: flex-start;
-}
-
-.color label input#cambio{
-  width: 15%; /* tamaño fijo */
-  padding: 6px 6px; /* ajusta padding si quieres que sea más pequeño */
-  background-color: #5B9BD5;
-}
-
-/* Color y Motor a la derecha */
-.color label#color,
-.color label#Motor,
-.color label[for="color"],
-.color label[for="Motor"] {
-  align-items: flex-end;
-}
-
-label {
-  font-weight: bold;
-  white-space: nowrap;
-  gap: 20px;
-}
-
-label input {
-  text-align: center;
-  background-color: #FFF2CC;
-  padding: 6px 10px;
-}
-
-.lugar input {
-  padding: 6px 10px;
-  width: 100%;
-  max-width: 600px;
-  background-color: #FFC000;
-}
-
-.observaciones {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 1200px;
- }
-
-h2.Obs {
-  background-color: transparent;
-  text-align: start;
-  font-size: 1em;
-  margin: 0;
-  height: auto;
-}
-
-#nota {
-  width: 100%;
-  max-width: 1200px;
-  height: 200px;
-  margin-top: 2px;
-  resize: vertical;
-  margin: 0 auto;
-  display: block;
-  padding: 10px;
-  font-family: inherit;
-  font-size: 1em;
-}
-
-/* Botón limpiar */
-.clear-button {
-  margin-top: 8px;
-  padding: 6px 12px;
-  background-color: #005f9e;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.clear-button:hover {
-  background-color: #00416d;
-}
-
-.tablas{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  overflow-x: auto;
-  margin: 0 auto;
-}
-
-.tablas > * {
-  display: block;
-  width: 100%;
+.valores {
+  margin-top: 12px;
 }
 
 #tablaValor {
-  border-collapse: separate;   /* mantiene spacing vertical */
-  border-spacing: 0 8px; 
-  margin: 0 auto;              /* centra la tabla */
   width: 100%;
-  max-width: 1200px;
-  display: block;
-  table-layout: fixed;        /* columnas distribuidas */
-  white-space: nowrap;          /* evita saltos de línea */
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  table-layout: fixed;
 }
 
-#tablaFinal{
-  border-collapse: separate;   /* mantiene spacing vertical */
-  border-spacing: 0 8px; 
-  margin: 0 auto;              /* centra la tabla */
-  width: 100%;
-  max-width: 1200px;
-  display: block;
-  table-layout: fixed;        /* columnas distribuidas */
-  white-space: nowrap; 
+#tablaValor thead th {
+  height: 48px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
 }
 
-#tablaFinal td input{
-  width: 100%;
-  box-sizing: border-box; /* asegura que padding y border no agranden el input */
-  border: none;
-  outline: none;
-  text-align: center;
-  background-color: transparent;
-  height: 28px; /* opcional: da altura uniforme */
-  }
+#tablaValor thead th.vacio {
+  background: transparent;
+  border: 0;
+}
 
+#tablaValor thead th:not(.vacio) {
+  background: var(--gris-cabecera);
+  border: 2px solid var(--borde);
+}
 
-#tablaValor th input,
-#tablaValor td input {
-  border: none;
-  outline: none;
-  text-align: center;
-  background-color: transparent;
-   }
+#tablaValor td {
+  vertical-align: middle;
+}
 
-/* ✅ Primera columna → solo borde inferior */
-#tablaValor th:first-child,
 #tablaValor td:first-child {
-  border: none;
-  border-bottom: 1px solid black;
-  font-size: 0.85em;
-  text-align: left;
- }
-
-
-#tablaFinal td.desarme{
-  border: none;
-  border-bottom: 1px solid black;
-  font-size: 0.85em;
-  text-align: left;
-  width: 40%;
-   }
-
-#tablaValor th.vacio:first-child,
-#tablaValor td.vacio:first-child {
-  border: none;
+  width: 61%;
+  border-bottom: 2px solid var(--borde);
+  padding: 0 18px 4px 0;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.15;
 }
 
-/* ✅ Todas las demás columnas → 4 bordes */
-#tablaValor th:not(:first-child),
 #tablaValor td:not(:first-child) {
-  border: 1px solid #000;
-  }
+  width: 19.5%;
+}
 
-
-#tablaFinal td:not(.desarme) {
-  border: 1px solid #000;
-  width: 25%;
-  background-color: #BDD7EE;
-  }
-
-#tablaValor th {
-  padding: 10px;
+#tablaValor td:not(:first-child) input {
+  height: 44px;
+  background: #fff;
   text-align: center;
-  white-space: nowrap;
-  word-wrap: break-word;
-  font-size: 0.85em;
+  font-size: 19px;
 }
 
-#tablaValor th:first-child,
-#tablaValor td:first-child {
-  width: 90%;  /* más ancha */
+.observaciones-box {
+  margin-top: 8px;
 }
 
-#tablaValor th:not(:first-child),
-#tablaValor td:not(:first-child) {
-  width: 30%;  /* más chicas */
+.observaciones-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  margin-bottom: 2px;
 }
 
-
-.noti h3 {
-  width: 95%;
-  border: none;
+.observaciones-header > span {
+  font-size: 20px;
+  font-weight: 700;
 }
 
-/* Botón generar PDF */
+.si-no {
+  display: grid;
+  grid-template-columns: auto 18px auto 18px;
+  align-items: center;
+  gap: 18px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.si-no input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+#nota {
+  min-height: 220px;
+  padding: 10px 12px;
+  resize: none;
+  font-size: 18px;
+}
+
+.recuperables {
+  margin-top: 18px;
+}
+
+.recuperable-grid {
+  display: grid;
+  align-items: end;
+  column-gap: 18px;
+  margin-bottom: 12px;
+}
+
+.fila-1 {
+  grid-template-columns: 1fr 220px 1fr 220px;
+}
+
+.fila-2 {
+  grid-template-columns: 1fr 220px 220px 1fr 130px;
+}
+
+.fila-3 {
+  grid-template-columns: 1fr 220px 1fr 130px;
+}
+
+.recuperable-grid label {
+  border-bottom: 2px solid var(--borde);
+  padding-bottom: 5px;
+  text-align: right;
+}
+
+.recuperable-grid select,
+.recuperable-grid input {
+  height: 48px;
+  font-size: 20px;
+  text-align: center;
+  background: var(--azul-celda);
+}
+
+.sin-label {
+  width: 100%;
+}
+
+.firmas {
+  margin-top: 8px;
+}
+
+.firma-linea {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+}
+
+.uso-bse {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--borde);
+}
+
+.bse-area {
+  height: 340px;
+  border: 2px solid var(--borde);
+  border-top: 0;
+}
+
+.acciones {
+  display: flex;
+  justify-content: center;
+  padding: 18px 0 12px;
+}
+
 .boton {
-  display: block;
-  margin: 20px auto;
-  padding: 6px 12px;
-  background-color: #005f9e;
-  color: white;
-  border: none;
-  border-radius: 4px;
+  border: 0;
+  background: #0b5fa5;
+  color: #fff;
+  padding: 11px 22px;
+  font-size: 16px;
+  border-radius: 8px;
   cursor: pointer;
 }
+
 .boton:hover {
-  background-color: #00416d;
+  background: #08497f;
 }
 
-/* Estilos para PDF */
+.modo-pdf {
+  background: #fff;
+}
+
+.modo-pdf .acciones {
+  display: none;
+}
+
+.modo-pdf #escalado {
+  width: auto;
+  height: auto !important;
+}
+
 .modo-pdf #contenidoPDF {
   width: 210mm;
   min-height: 297mm;
-  margin: 0 auto;
-  margin-top: 0;
-  padding: 10mm;
-  background: white;
-  box-sizing: border-box;
+  padding: 8mm 9mm 9mm;
+  margin: 0;
+  border: 0;
+  box-shadow: none;
   transform: none !important;
 }
+
 @media print {
   body {
+    background: #fff;
     -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .acciones {
+    display: none;
   }
 }
-.no-break {
-  page-break-inside: avoid;
-}
-.modo-pdf body {
-  margin: 0;
-}
-.modo-pdf h2 {
-  font-size: 0.9em;
-}
-.modo-pdf table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: auto;
-  word-break: break-word;
-  page-break-inside: auto;
-}
-.modo-pdf tr {
-  page-break-inside: avoid;
-  page-break-after: auto;
-}
-.modo-pdf td,
-.modo-pdf th {
-  padding: 4px;
-  font-size: 8pt;
-  white-space: normal;
-}
 
-.modo-pdf .boton,
-.modo-pdf .clear-button {
-  display: none !important;
-}                                                                                                                     
-
-/* 📌 Info Auto (marca/año en línea, modelo/chasis en columna centrados) */
-.info-auto {
-  display: flex;
-  flex-direction: column
