@@ -162,6 +162,11 @@ body {
   font: inherit;
 }
 
+.recuperable-grid label:empty {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
 .campo input,
 .tipo-cambio-input {
   height: 42px;
