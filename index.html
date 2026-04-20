@@ -162,8 +162,14 @@
 
             <input type="text" id="vehiculoValor" class="celda-azul sin-label" aria-label="Valor vehículo recuperable" />
 
-            <label for="horasVehiculo">HORAS CORRESPONDIENTES</label>
-            <input type="text" id="horasVehiculo" class="celda-azul" />
+            <label for="tipoRecuperable"></label>
+            <select id="tipo recupero">
+              <option value=""></option>
+              <option>REMATE</option>
+              <option>DESTRUCCIÓN</option>
+              <option>CHATARRA CON BAJA DE MOTOR</option>
+              <option>CHATARRA SIN BAJA DE MOTOR</option>
+            </select>     
           </div>
 
           <div class="recuperable-grid fila-3">
@@ -172,11 +178,9 @@
               <option value=""></option>
               <option>SI</option>
               <option>NO</option>
-            </select>
-
-            <label for="horasMotor">HORAS CORRESPONDIENTES</label>
-            <input type="text" id="horasMotor" class="celda-azul" />
-          </div>
+            </select>              
+            
+           </div>
         </section>
 
         <section class="firmas">
