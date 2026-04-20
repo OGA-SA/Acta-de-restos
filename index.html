@@ -7,211 +7,299 @@
   <link rel="stylesheet" href="estilo.css" />
 </head>
 <body>
-  <div id="escalado">
-    <div id="contenidoPDF">
-      <h2 style="color: #FFFFFF;">INFORME DE LIQUIDACIÓN DE RESTOS</h2>
+  <div class="app-shell">
+    <div id="escalado">
+      <div id="contenidoPDF">
+        <header class="titulo-principal">
+          <h1>INFORME DE LIQUIDACION DE RESTOS</h1>
+        </header>
 
-      <div class="datos">
-          <form class="columna izq">
-             <div class="lugar">
-              <!-- ✅ La fecha ahora se maneja aquí -->
-              <div id="fecha"></div>
-                 <label><span>Lugar de Inspección</span> <input type="text" id="ubicación" required /></label>
-                 <label><span>Localidad</span> <input type="text" id="localidad" required /></label>
-               </div>
-
-            <div class="info-auto"> 
-                <label id="marca"><span>Marca</span> <input type="text" required /> <span>Año</span> <input type="text" required /></label>
-                <label><span>Modelo</span> <input type="text" id="modelo" required /></label>
-                <label><span>Chasis</span> <input type="text" id="chasis" required /></label>
-            </div>
-            </form>
-
-          <form class="columna der">
-            <div class="derecha">
-              <div class="siniestro">
-                <label class="stro-año"> 
-                    <span>Siniestro:</span>
-                    <input type="text" id="siniestro1" required />             
-                    <span>Año:</span>
-                    <input type="text" id="siniestro2" 
-                           min="1900" max="2100" 
-                           required  
-                           placeholder="XXXX" 
-                           title="Debe ingresar el año completo con 4 dígitos (ej: 2025)"
-                           pattern="\d{4}" />
-                  </label>
-                <label><span>Matrícula</span> <input type="text" id="matrícula" required /></label>
-            </div>
-          <div class="color">
-                <label><span>Color</span> <input type="text" id="color" required /></label>
-                <label><span>Motor</span> <input type="text" id="Motor" required /></label>
-                <label><span>Tipo de cambio</span> <input type="text" id="cambio" required /></label>
-          </form>
-              </div>
+        <section class="encabezado">
+          <div class="fecha-row">
+            <label class="etiqueta-inline" for="fecha-texto">FECHA</label>
+            <div id="fecha" class="fecha-valor"></div>
           </div>
 
-      </div>
-      <div class="tablas"> 
-        <table id="tablaValor"> 
-          <thead> 
-            <tr> 
-              <th class="vacio"></th> 
-              <th style="background-color: #D6DCE4;"><b>U$S</b></th> 
-              <th style="background-color: #D6DCE4;"><b>$U</b></th> 
-            </tr> 
-          </thead> 
-          
-          <tbody> 
-            <tr><td><b>VALOR VENAL AUTODATA</b> (Automóviles // Vehículos pesados)</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" /></td></tr> 
-            <tr><td><b>VALOR VENAL PLAZA</b> (Motos)</td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" /></td></tr> 
-            <tr><td><b>VALOR ESTIMADO DE LA REPARACIÓN</b></td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" /></td></tr> 
-            <tr><td><b>VALOR MÍNIMO DE RESTOS</b></td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" /></td></tr> 
-            <tr><td><b>DEPRECIACIONES</b></td><td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td><td><input type="text" /></td></tr> 
-          </tbody> 
-        </table> 
+          <div class="top-grid">
+            <div class="campo campo-ancho">
+              <label class="campo-label" for="ubicacion">LUGAR DE INSPECCION</label>
+              <input type="text" id="ubicacion" />
+            </div>
 
-         <div class="observaciones">
-                  <h2 class="Obs">OBSERVACIONES</h2>
-                  <textarea id="nota" placeholder=""></textarea>
-                </div>  
-
-        
-       <table id="tablaFinal"> 
-         <tbody> 
-            <tr>
-              <td class="desarme"><b>INSUMIO DESARME</b></td>
-              <td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td>
-              <td class="desarme"><b>HORAS CORRESPONDIENTES</b></td>
-              <td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td>
-            </tr> 
-            <tr>
-              <td class="desarme"><b>VEHÍCULO RECUPERABLE</b></td>
-              <td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td>
-            </tr> 
-            <tr>
-              <td class="desarme"><b>MOTOR RECUPERABLE</b></td>
-              <td><input type="text" class="autocomplete" placeholder="" autocomplete="off"/></td>
-            </tr> 
-          </tbody>                               
-        </table>       
-       </div>
-      
-          <form id="boton">
-              <div style="text-align: center; margin: 30px 0;">
-                  <button class="boton" onclick="generarPDF()">Generar PDF</button>
+            <div class="campo campo-corto">
+              <label class="campo-label" for="siniestro1">SINIESTRO</label>
+              <div class="inline-duo">
+                <input type="text" id="siniestro1" />
+                <input type="text" id="siniestro2" inputmode="numeric" pattern="\d{4}" maxlength="4" aria-label="Año siniestro" />
               </div>
-          </form>
-        
+            </div>
+
+            <div class="campo campo-ancho">
+              <label class="campo-label" for="localidad">LOCALIDAD</label>
+              <input type="text" id="localidad" value="MONTEVIDEO" />
+            </div>
+
+            <div class="campo campo-corto">
+              <label class="campo-label" for="matricula">MATRICULA</label>
+              <input type="text" id="matricula" />
+            </div>
+
+            <div class="fila-marca">
+              <div class="campo marca-principal">
+                <label class="campo-label" for="marca">MARCA</label>
+                <input type="text" id="marca" />
+              </div>
+              <div class="campo marca-anio">
+                <label class="campo-label sr-only" for="anio">AÑO</label>
+                <input type="text" id="anio" aria-label="Año" />
+              </div>
+            </div>
+
+            <div class="campo campo-corto campo-rosado">
+              <label class="campo-label" for="color">COLOR</label>
+              <input type="text" id="color" />
+            </div>
+
+            <div class="campo campo-ancho">
+              <label class="campo-label" for="modelo">MODELO</label>
+              <input type="text" id="modelo" />
+            </div>
+
+            <div class="campo campo-corto campo-rosado">
+              <label class="campo-label" for="motor">MOTOR</label>
+              <input type="text" id="motor" />
+            </div>
+
+            <div class="campo campo-ancho">
+              <label class="campo-label" for="chasis">CHASIS</label>
+              <input type="text" id="chasis" />
+            </div>
+
+            <div class="tipo-cambio-wrap">
+              <div class="tipo-cambio-label">Tipo Cambio</div>
+              <input type="text" id="cambio" class="tipo-cambio-input" />
+            </div>
+          </div>
+        </section>
+
+        <section class="valores">
+          <table id="tablaValor">
+            <thead>
+              <tr>
+                <th class="vacio"></th>
+                <th>U$S</th>
+                <th>$U</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>VALOR VENAL AUTODATA (Automoviles // Vehiculos Pesados)</td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>VALOR VENAL PLAZA (Motos)</td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>VALOR ESTIMADO DE LA REPARACION</td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>VALOR SUGERIDO DE RESTOS</td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>VALOR MINIMO DE RESTOS</td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>DEPRECIACIONES</td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="observaciones-box">
+          <div class="observaciones-header">
+            <span>OBSERVACIONES</span>
+            <div class="si-no">
+              <label for="observacion-si">SI</label>
+              <input type="radio" name="obs_estado" id="observacion-si" value="si" />
+              <label for="observacion-no">NO</label>
+              <input type="radio" name="obs_estado" id="observacion-no" value="no" />
+            </div>
+          </div>
+          <textarea id="nota"></textarea>
+        </section>
+
+        <section class="recuperables">
+          <div class="recuperable-grid fila-1">
+            <label for="insumioDesarme">INSUMIO DESARME</label>
+            <select id="insumioDesarme">
+              <option value=""></option>
+              <option>SI</option>
+              <option>NO</option>
+            </select>
+
+            <label for="horasDesarme">HORAS CORRESPONDIENTES</label>
+            <input type="text" id="horasDesarme" class="celda-azul" />
+          </div>
+
+          <div class="recuperable-grid fila-2">
+            <label for="vehiculoRecuperable">VEHICULO RECUPERABLE</label>
+            <select id="vehiculoRecuperable">
+              <option value=""></option>
+              <option>SI</option>
+              <option>NO</option>
+            </select>
+
+            <input type="text" id="vehiculoValor" class="celda-azul sin-label" aria-label="Valor vehículo recuperable" />
+
+            <label for="horasVehiculo">HORAS CORRESPONDIENTES</label>
+            <input type="text" id="horasVehiculo" class="celda-azul" />
+          </div>
+
+          <div class="recuperable-grid fila-3">
+            <label for="motorRecuperable">MOTOR RECUPERABLE</label>
+            <select id="motorRecuperable">
+              <option value=""></option>
+              <option>SI</option>
+              <option>NO</option>
+            </select>
+
+            <label for="horasMotor">HORAS CORRESPONDIENTES</label>
+            <input type="text" id="horasMotor" class="celda-azul" />
+          </div>
+        </section>
+
+        <section class="firmas">
+          <div class="firma-linea">Tasación realizada por:</div>
+          <div class="uso-bse">Para Uso Exclusivo del BSE</div>
+          <div class="bse-area"></div>
+        </section>
+
+        <input type="hidden" id="carpeta" />
+        <input type="hidden" id="asegurado" />
+        <input type="hidden" id="vehiculo" />
+      </div>
+    </div>
+
+    <div id="boton" class="acciones">
+      <button type="button" class="boton">Generar PDF</button>
+    </div>
   </div>
-  
-<!-- Librerías necesarias -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
-<!-- ✅ Script para mostrar la fecha al cargar -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const fechaDiv = document.getElementById("fecha");
-  if (!fechaDiv) return;
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    function actualizarFecha() {
+      const fechaDiv = document.getElementById("fecha");
+      if (!fechaDiv) return;
 
-  const hoy = new Date();
-  const meses = [
-    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-    "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"
-  ];
-  const dia = hoy.getDate();
-  const mes = meses[hoy.getMonth()];
-  const anio = hoy.getFullYear();
+      const hoy = new Date();
+      const meses = [
+        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+        "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"
+      ];
 
-  fechaDiv.innerHTML = `<b>Fecha:</b> <u>${dia} de ${mes} de ${anio}</u>`;
-    });
-</script>
-
-<!-- ... (todos tus otros scripts se mantienen iguales) ... -->
-
-<!-- ✅ Generación de PDF con fecha corregida -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const boton = document.querySelector("#boton .boton"); 
-  if (!boton) {
-    console.error("❌ No se encontró el botón #boton .boton");
-    return;
-  }
-
-  boton.addEventListener("click", async (e) => {
-    e.preventDefault();
-
-    const carpeta = (document.getElementById("carpeta") || {}).value?.trim() || "";
-    const asegurado = (document.getElementById("asegurado") || {}).value?.trim() || "";
-    const vehiculo = (document.getElementById("vehiculo") || {}).value?.trim() || "";
-    const matricula = (document.getElementById("matricula") || {}).value?.trim() || "";
-    const siniestro1 = (document.getElementById("siniestro1") || {}).value?.trim() || "";
-    const siniestro2 = (document.getElementById("siniestro2") || {}).value?.trim() || "";
-
-    if (!carpeta || !asegurado || !vehiculo || !matricula || !siniestro1 || !siniestro2) {
-      alert("⚠️ Complete todos los campos antes de generar el PDF.");
-      return;
+      const dia = hoy.getDate();
+      const mes = meses[hoy.getMonth()];
+      const anio = hoy.getFullYear();
+      fechaDiv.textContent = `${dia} de ${mes} de ${anio}`;
     }
 
-    // ✅ Actualizar la fecha antes de generar PDF
-    const fechaDiv = document.getElementById("fecha");
-    const hoy = new Date();
-    const meses = [
-      "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-      "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"
-    ];
-    const dia = hoy.getDate();
-    const mes = meses[hoy.getMonth()];
-    const anio = hoy.getFullYear();
-    fechaDiv.innerHTML = `<b>Fecha:</b> <u>${dia} de ${mes} de ${anio}</u>`;
+    function actualizarEscala() {
+      const escalado = document.getElementById("escalado");
+      const contenido = document.getElementById("contenidoPDF");
+      if (!escalado || !contenido) return;
 
-    const ok = confirm("¿El número de siniestro ingresado es correcto: " + siniestro1 + "-" + siniestro2 + "?");
-    if (!ok) {
-      return;
+      const baseWidth = 1100;
+      const viewportWidth = Math.max(window.innerWidth - 32, 320);
+      const scale = Math.min(viewportWidth / baseWidth, 1);
+      escalado.style.setProperty("--scale", scale.toFixed(4));
+      escalado.style.height = `${contenido.offsetHeight * scale}px`;
     }
 
-    const element = document.getElementById("contenidoPDF");
-    if (!element) {
-      alert("❌ No se encontró el contenido a exportar (#contenidoPDF).");
-      return;
+    function generarPDF() {
+      document.querySelector("#boton .boton")?.click();
     }
 
-    try {
-      document.body.classList.add("modo-pdf");
+    document.addEventListener("DOMContentLoaded", () => {
+      actualizarFecha();
+      actualizarEscala();
 
-      const opt = {
-        margin: [0, 0, 0, 0],
-        filename: `${siniestro1 || "Siniestro"}-${siniestro2 || ""}.pdf`,
-        image: { type: "jpeg", quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
-      };
+      window.addEventListener("resize", actualizarEscala);
 
-      const blob = await html2pdf().set(opt).from(element).output('blob');
+      const boton = document.querySelector("#boton .boton");
+      if (!boton) return;
 
-      const nombreArchivo = `${siniestro1}_${siniestro2}_Formulario_1.pdf`;
-      const formData = new FormData();
-      formData.append('pdf', blob, nombreArchivo);
-      formData.append('filename', nombreArchivo);
-      formData.append("folder", "Formulario 1"); 
-      
-      const res = await fetch('https://extra-seguro-backend.onrender.com/upload', {
-        method: 'POST',
-        body: formData
+      boton.addEventListener("click", async (e) => {
+        e.preventDefault();
+
+        const matricula = document.getElementById("matricula")?.value.trim() || "";
+        const siniestro1 = document.getElementById("siniestro1")?.value.trim() || "";
+        const siniestro2 = document.getElementById("siniestro2")?.value.trim() || "";
+
+        if (!matricula || !siniestro1 || !siniestro2) {
+          alert("Complete Matrícula, Siniestro y Año antes de generar el PDF.");
+          return;
+        }
+
+        actualizarFecha();
+
+        const ok = confirm(`¿El número de siniestro ingresado es correcto: ${siniestro1}-${siniestro2}?`);
+        if (!ok) return;
+
+        const element = document.getElementById("contenidoPDF");
+        if (!element) {
+          alert("No se encontró el contenido a exportar.");
+          return;
+        }
+
+        try {
+          document.body.classList.add("modo-pdf");
+
+          const opt = {
+            margin: [0, 0, 0, 0],
+            filename: `${siniestro1}-${siniestro2}.pdf`,
+            image: { type: "jpeg", quality: 0.98 },
+            html2canvas: { scale: 2, useCORS: true },
+            jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+          };
+
+          const blob = await html2pdf().set(opt).from(element).output("blob");
+
+          const nombreArchivo = `${siniestro1}_${siniestro2}_Formulario_1.pdf`;
+          const formData = new FormData();
+          formData.append("pdf", blob, nombreArchivo);
+          formData.append("filename", nombreArchivo);
+          formData.append("folder", "Formulario 1");
+
+          const res = await fetch("https://extra-seguro-backend.onrender.com/upload", {
+            method: "POST",
+            body: formData
+          });
+
+          if (res.ok) {
+            alert("PDF enviado y subido correctamente.");
+          } else {
+            alert(`Error al subir PDF: ${res.status}`);
+          }
+        } catch (err) {
+          alert(`Error generando o subiendo el PDF: ${err?.message || err}`);
+        } finally {
+          document.body.classList.remove("modo-pdf");
+          actualizarEscala();
+        }
       });
-
-      if (res.ok) {
-        alert("✅ PDF enviado y subido correctamente");
-      } else {
-        alert("❌ Error al subir PDF: " + res.status);
-      }
-    } catch (err) {
-      alert("❌ Error generando o subiendo el PDF: " + (err?.message || err));
-    } finally {
-      document.body.classList.remove("modo-pdf");
-    }
-  });
-});
-</script>
+    });
+  </script>
 </body>
 </html>
+
