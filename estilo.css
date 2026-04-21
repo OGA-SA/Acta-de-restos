@@ -189,7 +189,11 @@ body {
 }
 
 .marca-anio {
-  grid-template-columns: 0 1fr;
+  display: block;
+}
+
+.marca-anio input {
+  width: 90px;
 }
 
 .campo-label,
