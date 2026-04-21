@@ -451,6 +451,36 @@ body {
   background: #08497f;
 }
 
+/* Achica Marca, Modelo y Chasis manteniéndolos alineados a la izquierda */
+.campo-marca-row,
+.campo-modelo,
+.campo-chasis {
+  width: 470px;
+  justify-self: start;
+}
+
+/* Mantiene el año de Marca con su tamaño actual */
+.campo-marca-row {
+  grid-template-columns: 1fr 110px;
+}
+
+/* Modelo y Chasis quedan con el mismo arranque que Marca */
+.campo-modelo,
+.campo-chasis {
+  grid-template-columns: 95px 1fr;
+}
+
+/* Motor más hacia la izquierda y con label más grande */
+.campo-motor {
+  grid-template-columns: 105px 1fr;
+  transform: translateX(-45px);
+  width: calc(100% + 45px);
+}
+
+.campo-motor .campo-label {
+  font-size: 20px;
+}
+
 .modo-pdf {
   background: #fff;
 }
