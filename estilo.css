@@ -100,6 +100,7 @@ body {
   row-gap: 22px;
   align-items: end;
 }
+
 .fecha-row {
   grid-column: 1;
   grid-row: 1;
@@ -213,11 +214,6 @@ body {
   border: 2px solid var(--borde);
   outline: none;
   font: inherit;
-}
-
-.recuperable-grid label:empty {
-  border-bottom: none;
-  padding-bottom: 0;
 }
 
 .campo input,
