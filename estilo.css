@@ -383,22 +383,21 @@ body {
   margin-bottom: 12px;
 }
 
-.fila-1 {
-  grid-template-columns: 1fr 220px 1fr 220px;
-}
-
-.fila-2 {
-  grid-template-columns: 1fr 220px 220px 1fr 130px;
-}
-
+.fila-1,
+.fila-2,
 .fila-3 {
-  grid-template-columns: 1fr 220px 1fr 130px;
+  grid-template-columns: 220px 220px 280px 220px;
 }
 
 .recuperable-grid label {
   border-bottom: 2px solid var(--borde);
   padding-bottom: 5px;
   text-align: right;
+}
+
+.recuperable-grid label.sin-subrayado {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .recuperable-grid select,
