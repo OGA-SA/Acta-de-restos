@@ -486,6 +486,16 @@ body {
   font-size: 20px;
 }
 
+.tipo-cambio-wrap {
+  transform: translateX(35px);
+  width: 58%;
+  grid-template-columns: 1.25fr 0.75fr;
+}
+
+.tipo-cambio-label {
+  font-size: 20px;
+}
+
 .modo-pdf {
   background: #fff;
 }
