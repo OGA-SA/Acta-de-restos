@@ -396,8 +396,11 @@ body {
 }
 
 .recuperable-grid label.sin-subrayado {
+  width: 280px;
+  justify-self: end;
+  text-align: right;
   border-bottom: none;
-  padding-bottom: 0;
+  padding-bottom: 5px;
 }
 
 .recuperable-grid select,
@@ -415,6 +418,12 @@ body {
 .recuperable-grid {
   grid-template-columns: 270px 240px 1fr 220px;
   column-gap: 18px;
+}
+
+.recuperable-grid label:first-child {
+  width: 270px;
+  justify-self: end;
+  text-align: right;
 }
 
 .recuperable-grid label:nth-last-child(2) {
@@ -508,6 +517,12 @@ body {
 
 .tipo-cambio-label {
   font-size: 20px;
+}
+
+.recuperable-grid label:nth-child(3) {
+  width: 280px;
+  justify-self: end;
+  text-align: right;
 }
 
 .modo-pdf {
