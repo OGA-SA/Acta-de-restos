@@ -15,18 +15,18 @@
         </header>
 
         <section class="encabezado">
-          <div class="fecha-row">
-            <label class="etiqueta-inline" for="fecha-texto">FECHA</label>
-            <div id="fecha" class="fecha-valor"></div>
-          </div>
-
           <div class="top-grid">
-            <div class="campo campo-ancho">
+            <div class="fecha-row">
+              <label class="etiqueta-inline" for="fecha">FECHA</label>
+              <div id="fecha" class="fecha-valor"></div>
+            </div>
+
+            <div class="campo campo-ancho campo-ubicacion">
               <label class="campo-label" for="ubicacion">LUGAR DE INSPECCION</label>
               <input type="text" id="ubicacion" />
             </div>
 
-            <div class="campo campo-corto">
+            <div class="campo campo-corto campo-siniestro">
               <label class="campo-label" for="siniestro1">SINIESTRO</label>
               <div class="inline-duo">
                 <input type="text" id="siniestro1" />
@@ -34,17 +34,17 @@
               </div>
             </div>
 
-            <div class="campo campo-ancho">
+            <div class="campo campo-ancho campo-localidad">
               <label class="campo-label" for="localidad">LOCALIDAD</label>
               <input type="text" id="localidad" value="MONTEVIDEO" />
             </div>
 
-            <div class="campo campo-corto">
+            <div class="campo campo-corto campo-matricula">
               <label class="campo-label" for="matricula">MATRICULA</label>
               <input type="text" id="matricula" />
             </div>
 
-            <div class="fila-marca">
+            <div class="fila-marca campo-marca-row">
               <div class="campo marca-principal">
                 <label class="campo-label" for="marca">MARCA</label>
                 <input type="text" id="marca" />
@@ -55,22 +55,22 @@
               </div>
             </div>
 
-            <div class="campo campo-corto campo-rosado">
+            <div class="campo campo-corto campo-rosado campo-color">
               <label class="campo-label" for="color">COLOR</label>
               <input type="text" id="color" />
             </div>
 
-            <div class="campo campo-ancho">
+            <div class="campo campo-ancho campo-modelo">
               <label class="campo-label" for="modelo">MODELO</label>
               <input type="text" id="modelo" />
             </div>
 
-            <div class="campo campo-corto campo-rosado">
+            <div class="campo campo-corto campo-rosado campo-motor">
               <label class="campo-label" for="motor">MOTOR</label>
               <input type="text" id="motor" />
             </div>
 
-            <div class="campo campo-ancho">
+            <div class="campo campo-ancho campo-chasis">
               <label class="campo-label" for="chasis">CHASIS</label>
               <input type="text" id="chasis" />
             </div>
@@ -80,7 +80,7 @@
               <input type="text" id="cambio" class="tipo-cambio-input" />
             </div>
           </div>
-        </section>
+        </section>  
 
         <section class="valores">
           <table id="tablaValor">
