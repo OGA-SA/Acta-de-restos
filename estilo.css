@@ -473,8 +473,8 @@ body {
 /* Motor más hacia la izquierda y con label más grande */
 .campo-motor {
   grid-template-columns: 105px 1fr;
-  transform: translateX(-90px);
-  width: calc(100% + 90px);
+  transform: translateX(-110px);
+  width: calc(100% + 110px);
 }
 
 .campo-motor .campo-label {
