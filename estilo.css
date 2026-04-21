@@ -70,27 +70,30 @@ body {
 
 .fecha-row {
   display: grid;
-  grid-template-columns: 105px 300px;
+  grid-template-columns: 80px 250px;
   align-items: end;
   justify-self: end;
   width: auto;
+  grid-column: 1;
+  grid-row: 1;
 }
+
 
 .etiqueta-inline {
   justify-self: end;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1;
-  margin-right: 20px;
+  margin-right: 16px;
 }
 
 .fecha-valor {
-  min-height: 34px;
-  border-bottom: 4px solid #000;
+  min-height: 30px;
+  border-bottom: 3px solid #000;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   font-style: italic;
-  line-height: 31px;
+  line-height: 27px;
 }
 
 .top-grid {
@@ -99,11 +102,6 @@ body {
   column-gap: 34px;
   row-gap: 22px;
   align-items: end;
-}
-
-.fecha-row {
-  grid-column: 1;
-  grid-row: 1;
 }
 
 .campo-siniestro {
