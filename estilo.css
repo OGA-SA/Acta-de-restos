@@ -310,7 +310,7 @@ body {
 }
 
 #tablaValor td:first-child {
-  width: 80%;
+  width: 68%;
   border-bottom: 2px solid var(--borde);
   padding: 0 18px 4px 0;
   font-size: 19px;
@@ -318,8 +318,13 @@ body {
   line-height: 1.15;
 }
 
+#tablaValor th:first-child {
+  width: 68%;
+}
+
+#tablaValor th:not(:first-child),
 #tablaValor td:not(:first-child) {
-  width: 10%;
+  width: 16%;
 }
 
 #tablaValor td:not(:first-child) input {
