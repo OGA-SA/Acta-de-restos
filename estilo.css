@@ -165,17 +165,22 @@ body {
   align-items: center;
 }
 
-.campo-ancho {
-  grid-template-columns: 215px 1fr;
-}
-
 .campo-corto {
   grid-template-columns: 150px 1fr;
 }
 
+.campo-ancho {
+  grid-template-columns: 95px 1fr;
+}
+
+.campo-ubicacion,
+.campo-localidad {
+  grid-template-columns: 215px 1fr;
+}
+
 .fila-marca {
   display: grid;
-  grid-template-columns: 1fr 220px;
+  grid-template-columns: 1fr 70px;
   column-gap: 18px;
 }
 
