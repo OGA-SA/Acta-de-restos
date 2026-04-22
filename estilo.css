@@ -417,7 +417,6 @@ body {
 
 .recuperable-grid {
   grid-template-columns: 270px 240px 1fr 220px;
-  column-gap: 18px;
 }
 
 .recuperable-grid label:first-child {
