@@ -477,13 +477,13 @@ select.firma-input {
   display: flex;
   align-items: center;
   border-bottom: 2px solid var(--borde);
+  
 }
 
 .bse-area {
   height: 340px;
   border: 2px solid var(--borde);
   border-top: 0;
-  margin-top: 10px;
 }
 
 .acciones {
