@@ -379,7 +379,7 @@ body {
 
 .recuperable-grid {
   display: grid;
-  grid-template-columns: 300px 220px 1fr 220px;
+  grid-template-columns: 260px 220px 1fr 220px;
   column-gap: 18px;
   align-items: end;
   margin-bottom: 12px;
@@ -388,7 +388,7 @@ body {
 .fila-1,
 .fila-2,
 .fila-3 {
-  grid-template-columns: 300px 220px 1fr 220px;
+  grid-template-columns: 260px 220px 1fr 220px;
 }
 
 .recuperable-grid label {
@@ -582,9 +582,9 @@ select.firma-input {
 }
 
 .recuperable-grid label.sin-subrayado + select {
-  width: 230px;
+  width: 220px;
   justify-self: end;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .modo-pdf {
