@@ -462,6 +462,11 @@ body {
   padding: 2px 8px;
 }
 
+select.firma-input {
+  appearance: auto;
+  background-color: transparent;
+}
+
 .uso-bse {
   min-height: 40px;
   display: flex;
