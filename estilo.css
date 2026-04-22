@@ -444,6 +444,23 @@ body {
   min-height: 54px;
   display: flex;
   align-items: center;
+  gap: 12px;
+}
+.firma-linea label {
+  font-size: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.firma-input {
+  width: 320px;
+  border: none;
+  border-bottom: 2px solid var(--borde);
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-size: 18px;
+  padding: 2px 8px;
 }
 
 .uso-bse {
