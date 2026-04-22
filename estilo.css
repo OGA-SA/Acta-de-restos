@@ -581,8 +581,9 @@ select.firma-input {
 }
 
 .recuperable-grid label.sin-subrayado + select {
-  width: 300px;
+  width: 260px;
   justify-self: end;
+  font-size: 15px;
 }
 
 .modo-pdf {
