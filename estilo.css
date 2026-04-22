@@ -385,10 +385,8 @@ body {
 
 .fila-1,
 .fila-2,
-.fila-3,
-.recuperable-grid {
-  grid-template-columns: 300px 190px 210px 310px;
-  column-gap: 8px;
+.fila-3,{
+  grid-template-columns: 270px 240px 1fr 220px;
 }
 
 .recuperable-grid label {
