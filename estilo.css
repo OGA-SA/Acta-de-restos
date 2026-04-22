@@ -521,34 +521,45 @@ body {
   font-size: 20px;
 }
 
+/* Labels izquierdos más grandes que sus inputs */
 .recuperable-grid label:first-child {
   width: 300px;
+  justify-self: end;
   text-align: right;
 }
 
+/* Inputs/selects izquierdos un poco más chicos */
 .recuperable-grid select:nth-child(2),
 .recuperable-grid input:nth-child(2) {
   width: 190px;
+  justify-self: start;
 }
 
+/* Labels derechos normales */
 .recuperable-grid label:nth-child(3) {
-  width: 210px;
+  width: 280px;
+  justify-self: end;
   text-align: right;
 }
 
+/* Inputs derechos normales */
 .recuperable-grid select:nth-child(4),
 .recuperable-grid input:nth-child(4) {
-  width: 310px;
+  width: 220px;
+  justify-self: end;
 }
 
+/* Excepción: Tipo recuperable sin subrayado y con select más grande */
 .recuperable-grid label.sin-subrayado {
-  width: 210px;
+  width: 220px;
+  justify-self: end;
   text-align: right;
   border-bottom: none;
 }
 
 .recuperable-grid label.sin-subrayado + select {
   width: 310px;
+  justify-self: end;
 }
 
 .modo-pdf {
