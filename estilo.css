@@ -423,7 +423,7 @@ body {
 
 
 .recuperable-grid label:first-child {
-  width: 300px;
+  width: 260px;
   justify-self: end;
   text-align: right;
   border-bottom: 2px solid var(--borde);
