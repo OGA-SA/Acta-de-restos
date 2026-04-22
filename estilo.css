@@ -373,20 +373,22 @@ body {
 }
 
 .recuperables {
+  width: 100%;
   margin-top: 18px;
 }
 
 .recuperable-grid {
   display: grid;
-  align-items: end;
+  grid-template-columns: 300px 220px 1fr 220px;
   column-gap: 18px;
+  align-items: end;
   margin-bottom: 12px;
 }
 
 .fila-1,
 .fila-2,
-.fila-3,{
-  grid-template-columns: 250px 220px 1fr 200px;
+.fila-3 {
+  grid-template-columns: 300px 220px 1fr 220px;
 }
 
 .recuperable-grid label {
@@ -419,10 +421,13 @@ body {
   grid-template-columns: 270px 240px 1fr 220px;
 }
 
+
 .recuperable-grid label:first-child {
-  width: 270px;
+  width: 300px;
   justify-self: end;
   text-align: right;
+  border-bottom: 2px solid var(--borde);
+  padding-bottom: 5px;
 }
 
 .recuperable-grid label:nth-last-child(2) {
@@ -550,15 +555,16 @@ select.firma-input {
 /* Inputs/selects izquierdos un poco más chicos */
 .recuperable-grid select:nth-child(2),
 .recuperable-grid input:nth-child(2) {
-  width: 190px;
+  width: 220px;
   justify-self: start;
 }
 
 /* Labels derechos normales */
 .recuperable-grid label:nth-child(3) {
-  width: 280px;
   justify-self: end;
   text-align: right;
+  border-bottom: 2px solid var(--borde);
+  padding-bottom: 5px;
 }
 
 /* Inputs derechos normales */
@@ -570,14 +576,12 @@ select.firma-input {
 
 /* Excepción: Tipo recuperable sin subrayado y con select más grande */
 .recuperable-grid label.sin-subrayado {
-  width: 220px;
-  justify-self: end;
-  text-align: right;
   border-bottom: none;
+  padding-bottom: 5px;
 }
 
 .recuperable-grid label.sin-subrayado + select {
-  width: 310px;
+  width: 300px;
   justify-self: end;
 }
 
