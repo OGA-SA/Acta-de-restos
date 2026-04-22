@@ -374,22 +374,18 @@ body {
 
 .recuperables {
   width: 100%;
-  margin-top: 18px;
+  overflow: hidden;
 }
 
 .recuperable-grid {
+  width: 100%;
   display: grid;
   grid-template-columns: 260px 220px 1fr 220px;
-  column-gap: 18px;
+  column-gap: 12px;
   align-items: end;
   margin-bottom: 12px;
 }
 
-.fila-1,
-.fila-2,
-.fila-3 {
-  grid-template-columns: 260px 220px 1fr 220px;
-}
 
 .recuperable-grid label {
   border-bottom: 2px solid var(--borde);
@@ -424,10 +420,11 @@ body {
 
 .recuperable-grid label:first-child {
   width: 260px;
-  justify-self: end;
+  justify-self: start;
   text-align: right;
   border-bottom: 2px solid var(--borde);
   padding-bottom: 5px;
+}
 }
 
 .recuperable-grid label:nth-last-child(2) {
@@ -438,6 +435,12 @@ body {
 .recuperable-grid input:last-child {
   justify-self: end;
   width: 220px;
+}
+
+.recuperable-grid label,
+.recuperable-grid select,
+.recuperable-grid input {
+  transform: none !important;
 }
 
 .firmas {
@@ -546,12 +549,8 @@ select.firma-input {
   font-size: 20px;
 }
 
-/* Labels izquierdos más grandes que sus inputs */
-.recuperable-grid label:first-child {
-  width: 300px;
-  justify-self: end;
-  text-align: right;
-}
+
+
 
 /* Inputs/selects izquierdos un poco más chicos */
 .recuperable-grid select:nth-child(2),
@@ -562,6 +561,7 @@ select.firma-input {
 
 /* Labels derechos normales */
 .recuperable-grid label:nth-child(3) {
+  width: 260px;
   justify-self: end;
   text-align: right;
   border-bottom: 2px solid var(--borde);
@@ -571,20 +571,23 @@ select.firma-input {
 /* Inputs derechos normales */
 .recuperable-grid select:nth-child(4),
 .recuperable-grid input:nth-child(4) {
-  width: 220px;
+  width: 180px;
   justify-self: end;
 }
 
 /* Excepción: Tipo recuperable sin subrayado y con select más grande */
 .recuperable-grid label.sin-subrayado {
+  width: 260px;
+  justify-self: end;
+  text-align: right;
   border-bottom: none;
   padding-bottom: 5px;
 }
 
 .recuperable-grid label.sin-subrayado + select {
-  width: 220px;
+  width: 180px;
   justify-self: end;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .modo-pdf {
