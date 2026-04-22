@@ -566,6 +566,7 @@ select.firma-input {
   text-align: right;
   border-bottom: 2px solid var(--borde);
   padding-bottom: 5px;
+  transform: translateX(45px) !important;
 }
 
 /* Inputs derechos normales */
@@ -582,6 +583,7 @@ select.firma-input {
   text-align: right;
   border-bottom: none;
   padding-bottom: 5px;
+  transform: translateX(45px) !important;
 }
 
 .recuperable-grid label.sin-subrayado + select {
