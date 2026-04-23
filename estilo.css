@@ -573,7 +573,7 @@ select.firma-input {
 /* Inputs derechos normales */
 .recuperable-grid select:nth-child(4),
 .recuperable-grid input:nth-child(4) {
-  width: 190px;
+  width: 180px;
   justify-self: end;
 }
 
@@ -588,7 +588,7 @@ select.firma-input {
 }
 
 .recuperable-grid label.sin-subrayado + select {
-  width: 180px;
+  width: 190px;
   justify-self: end;
   font-size: 13px;
 }
@@ -596,7 +596,7 @@ select.firma-input {
 
 .recuperable-grid select:nth-child(4),
 .recuperable-grid input:nth-child(4) {
-  transform: translateX(-10px) !important;
+  transform: translateX(-9px) !important;
 }
 
 
