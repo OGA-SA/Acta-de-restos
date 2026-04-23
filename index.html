@@ -505,11 +505,11 @@
 
         const blob = await generarPdfEditableBlob();
 
-        const nombreArchivo = `${siniestro1}_${siniestro2}_Formulario_1_editable.pdf`;
+        const nombreArchivo = `${siniestro1}_${siniestro2}_Acta_de_Restos.pdf`;
         const formData = new FormData();
         formData.append("pdf", blob, nombreArchivo);
         formData.append("filename", nombreArchivo);
-        formData.append("folder", "Formulario 1");
+        formData.append("folder", "Extra Seguro");
 
         const res = await fetch("https://extra-seguro-backend.onrender.com/upload", {
           method: "POST",
