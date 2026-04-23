@@ -567,7 +567,7 @@ select.firma-input {
   text-align: right;
   border-bottom: 2px solid var(--borde);
   padding-bottom: 5px;
-  transform: translateX(45px) !important;
+  transform: translateX(40px) !important;
 }
 
 /* Inputs derechos normales */
@@ -596,7 +596,7 @@ select.firma-input {
 
 .recuperable-grid select:nth-child(4),
 .recuperable-grid input:nth-child(4) {
-  transform: translateX(-20px) !important;
+  transform: translateX(-15px) !important;
 }
 
 
