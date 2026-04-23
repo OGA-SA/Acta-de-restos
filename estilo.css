@@ -598,10 +598,7 @@ select.firma-input {
 .recuperable-grid input:nth-child(4) {
   transform: translateX(-20px) !important;
 }
-.recuperable-grid label:nth-child(3),
-.recuperable-grid label.sin-subrayado{
-  transform: translateX(-8px) !important;
-}
+
 
 .modo-pdf {
   background: #fff;
