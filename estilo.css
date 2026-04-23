@@ -573,7 +573,7 @@ select.firma-input {
 /* Inputs derechos normales */
 .recuperable-grid select:nth-child(4),
 .recuperable-grid input:nth-child(4) {
-  width: 180px;
+  width: 190px;
   justify-self: end;
 }
 
