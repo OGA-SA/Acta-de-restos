@@ -20,7 +20,7 @@
               <label class="etiqueta-inline" for="fecha">FECHA</label>
               <div id="fecha" class="fecha-valor"></div>
             </div>
-        
+
             <div class="campo campo-corto campo-siniestro">
               <label class="campo-label" for="siniestro1">SINIESTRO</label>
               <div class="inline-duo">
@@ -28,22 +28,22 @@
                 <input type="text" id="siniestro2" inputmode="numeric" pattern="\d{4}" maxlength="4" aria-label="Año siniestro" />
               </div>
             </div>
-        
+
             <div class="campo campo-ancho campo-ubicacion">
               <label class="campo-label" for="ubicacion">LUGAR DE INSPECCION</label>
               <input type="text" id="ubicacion" />
             </div>
-        
+
             <div class="campo campo-corto campo-matricula">
               <label class="campo-label" for="matricula">MATRICULA</label>
               <input type="text" id="matricula" />
             </div>
-        
+
             <div class="campo campo-ancho campo-localidad">
               <label class="campo-label" for="localidad">LOCALIDAD</label>
               <input type="text" id="localidad" value="MONTEVIDEO" />
             </div>
-        
+
             <div class="fila-marca campo-marca-row">
               <div class="campo marca-principal">
                 <label class="campo-label" for="marca">MARCA</label>
@@ -54,27 +54,27 @@
                 <input type="text" id="anio" aria-label="Año" />
               </div>
             </div>
-        
+
             <div class="campo campo-corto campo-rosado campo-color">
               <label class="campo-label" for="color">COLOR</label>
               <input type="text" id="color" />
             </div>
-        
+
             <div class="campo campo-ancho campo-modelo">
               <label class="campo-label" for="modelo">MODELO</label>
               <input type="text" id="modelo" />
             </div>
-        
+
             <div class="campo campo-corto campo-rosado campo-motor">
               <label class="campo-label" for="motor">MOTOR</label>
               <input type="text" id="motor" />
             </div>
-        
+
             <div class="campo campo-ancho campo-chasis">
               <label class="campo-label" for="chasis">CHASIS</label>
               <input type="text" id="chasis" />
             </div>
-        
+
             <div class="tipo-cambio-wrap">
               <div class="tipo-cambio-label">Tipo Cambio</div>
               <input type="text" id="cambio" class="tipo-cambio-input" />
@@ -154,14 +154,14 @@
               <option>NO</option>
             </select>
 
-           <label for="tipoRecuperable" class="sin-subrayado"></label>
+            <label for="tipoRecupero" class="sin-subrayado"></label>
             <select id="tipoRecupero">
               <option value=""></option>
               <option>REMATE</option>
               <option>DESTRUCCIÓN</option>
               <option>CHATARRA CON BAJA DE MOTOR</option>
               <option>CHATARRA SIN BAJA DE MOTOR</option>
-            </select>     
+            </select>
           </div>
 
           <div class="recuperable-grid fila-3">
@@ -170,12 +170,11 @@
               <option value=""></option>
               <option>SI</option>
               <option>NO</option>
-            </select>              
-            
-           </div>
+            </select>
+          </div>
         </section>
 
-       <section class="firmas">
+        <section class="firmas">
           <div class="firma-linea">
             <label for="realizadoPor">Tasación realizada por:</label>
             <select id="realizadoPor" class="firma-input">
@@ -203,370 +202,361 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
-  
- <script>
-      function actualizarFecha() {
-        const fechaDiv = document.getElementById("fecha");
-        if (!fechaDiv) return;
-    
-        const hoy = new Date();
-        const meses = [
-          "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-          "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"
-        ];
-    
-        const dia = hoy.getDate();
-        const mes = meses[hoy.getMonth()];
-        const anio = hoy.getFullYear();
-        fechaDiv.textContent = `${dia} de ${mes} de ${anio}`;
-      }
-    
-      function actualizarEscala() {
-        const escalado = document.getElementById("escalado");
-        const contenido = document.getElementById("contenidoPDF");
-        if (!escalado || !contenido) return;
-    
-        const baseWidth = 1100;
-        const viewportWidth = Math.max(window.innerWidth - 32, 320);
-        const scale = Math.min(viewportWidth / baseWidth, 1);
-        escalado.style.setProperty("--scale", scale.toFixed(4));
-        escalado.style.height = `${contenido.offsetHeight * scale}px`;
-      }
-    
-      function generarPDF() {
-        document.querySelector("#boton .boton")?.click();
-      }
-    
-      function obtenerEscalaActual() {
-        const escalado = document.getElementById("escalado");
-        const value = getComputedStyle(escalado).getPropertyValue("--scale");
-        const scale = parseFloat(value);
-        return Number.isFinite(scale) && scale > 0 ? scale : 1;
-      }
-    
-      function limpiarClonParaPlantilla(clone) {
-        clone.querySelectorAll("input, textarea, select").forEach((el) => {
-          if (el.type === "hidden") return;
-    
-          if (el.tagName === "SELECT") {
-            el.selectedIndex = 0;
-          } else if (el.type === "radio" || el.type === "checkbox") {
-            el.checked = false;
-          } else {
-            el.value = "";
-          }
+
+  <script>
+    function actualizarFecha() {
+      const fechaDiv = document.getElementById("fecha");
+      if (!fechaDiv) return;
+
+      const hoy = new Date();
+      const meses = [
+        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+        "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"
+      ];
+
+      const dia = hoy.getDate();
+      const mes = meses[hoy.getMonth()];
+      const anio = hoy.getFullYear();
+      fechaDiv.textContent = `${dia} de ${mes} de ${anio}`;
+    }
+
+    function actualizarEscala() {
+      const escalado = document.getElementById("escalado");
+      const contenido = document.getElementById("contenidoPDF");
+      if (!escalado || !contenido) return;
+
+      const baseWidth = 1100;
+      const viewportWidth = Math.max(window.innerWidth - 32, 320);
+      const scale = Math.min(viewportWidth / baseWidth, 1);
+      escalado.style.setProperty("--scale", scale.toFixed(4));
+      escalado.style.height = `${contenido.offsetHeight * scale}px`;
+    }
+
+    function generarPDF() {
+      document.querySelector("#boton .boton")?.click();
+    }
+
+    function limpiarClonParaPlantilla(clone) {
+      clone.querySelectorAll("input, textarea, select").forEach((el) => {
+        if (el.type === "hidden") return;
+
+        if (el.tagName === "SELECT") {
+          el.selectedIndex = 0;
+        } else if (el.type === "radio" || el.type === "checkbox") {
+          el.checked = false;
+        } else {
+          el.value = "";
+        }
+      });
+    }
+
+    function obtenerCamposEditables(root) {
+      const fields = [];
+      let autoIndex = 0;
+
+      root.querySelectorAll("input, textarea, select").forEach((el) => {
+        if (el.type === "hidden") return;
+        if (el.type === "radio" || el.type === "checkbox") return;
+
+        const id = el.id || el.name || `campo_${++autoIndex}`;
+        const value = el.tagName === "SELECT"
+          ? (el.value || "")
+          : (el.value || "").trim();
+
+        fields.push({
+          id,
+          element: el,
+          value,
+          type: el.tagName.toLowerCase(),
+          options: el.tagName === "SELECT"
+            ? Array.from(el.options).map((o) => o.textContent.trim()).filter(Boolean)
+            : []
         });
-      }
-    
-      function obtenerCamposEditables() {
-        const root = document.getElementById("contenidoPDF");
-        const fields = [];
-        let autoIndex = 0;
-    
-        root.querySelectorAll("input, textarea, select").forEach((el) => {
-          if (el.type === "hidden") return;
-          if (el.type === "radio" || el.type === "checkbox") return;
-    
-          const id = el.id || el.name || `campo_${++autoIndex}`;
-          const value = el.tagName === "SELECT"
-            ? (el.value || "")
-            : (el.value || "").trim();
-    
-          fields.push({
-            id,
-            element: el,
-            value,
-            type: el.tagName.toLowerCase(),
-            options: el.tagName === "SELECT"
-              ? Array.from(el.options).map((o) => o.textContent.trim()).filter(Boolean)
-              : []
-          });
-        });
-    
-        return fields;
-      }
+      });
 
-  function rectRelativoAPdf(element, container, scale, pageWidth, pageHeight) {
-    const elRect = element.getBoundingClientRect();
-    const containerRect = container.getBoundingClientRect();
+      return fields;
+    }
 
-    const left = (elRect.left - containerRect.left) / scale;
-    const top = (elRect.top - containerRect.top) / scale;
-    const width = elRect.width / scale;
-    const height = elRect.height / scale;
+    function rectRelativoAPdf(element, container, pageWidth, pageHeight) {
+      const elRect = element.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
 
-    const x = (left / container.offsetWidth) * pageWidth;
-    const y = pageHeight - ((top + height) / container.offsetHeight) * pageHeight;
-    const w = (width / container.offsetWidth) * pageWidth;
-    const h = (height / container.offsetHeight) * pageHeight;
+      const left = elRect.left - containerRect.left;
+      const top = elRect.top - containerRect.top;
+      const width = elRect.width;
+      const height = elRect.height;
 
-    return { x, y, w, h };
-  }
+      const x = (left / containerRect.width) * pageWidth;
+      const y = pageHeight - ((top + height) / containerRect.height) * pageHeight;
+      const w = (width / containerRect.width) * pageWidth;
+      const h = (height / containerRect.height) * pageHeight;
 
-   function colorPdfPorCampo(id) {
+      return { x, y, w, h };
+    }
+
+    function colorPdfPorCampo(id) {
       const { rgb } = PDFLib;
-    
+
       const colors = {
-        ubicacion: rgb(1, 0.752, 0),          // amarillo fuerte
+        ubicacion: rgb(1, 0.752, 0),
         localidad: rgb(1, 0.752, 0),
         modelo: rgb(1, 0.752, 0),
         chasis: rgb(1, 0.752, 0),
-    
-        siniestro1: rgb(1, 0.949, 0.8),       // amarillo suave
+
+        siniestro1: rgb(1, 0.949, 0.8),
         siniestro2: rgb(1, 0.949, 0.8),
         matricula: rgb(1, 0.949, 0.8),
         marca: rgb(1, 0.949, 0.8),
         anio: rgb(1, 0.949, 0.8),
-    
-        color: rgb(0.953, 0.851, 0.784),      // rosado
+
+        color: rgb(0.953, 0.851, 0.784),
         motor: rgb(0.953, 0.851, 0.784),
-    
-        cambio: rgb(0.373, 0.588, 0.796),     // azul tipo cambio
+
+        cambio: rgb(0.373, 0.588, 0.796),
+
         insumioDesarme: rgb(0.663, 0.769, 0.875),
         horasDesarme: rgb(0.663, 0.769, 0.875),
         vehiculoRecuperable: rgb(0.663, 0.769, 0.875),
         tipoRecupero: rgb(0.663, 0.769, 0.875),
-        motorRecuperable: rgb(0.663, 0.769, 0.875),
-    
-        realizadoPor: rgb(1, 1, 1)            // o transparente visualmente
+        motorRecuperable: rgb(0.663, 0.769, 0.875)
       };
-    
-      return colors[id] || rgb(1, 1, 1);
+
+      return colors[id] || null;
     }
-   
-  async function generarPdfEditableBlob() {
-    actualizarFecha();
 
-    const { PDFDocument, StandardFonts } = PDFLib;
-
-    const original = document.getElementById("contenidoPDF");
-    const scale = obtenerEscalaActual();
-
-    const cloneWrap = document.createElement("div");
-    cloneWrap.style.position = "fixed";
-    cloneWrap.style.left = "-20000px";
-    cloneWrap.style.top = "0";
-    cloneWrap.style.width = `${original.offsetWidth}px`;
-    cloneWrap.style.background = "#fff";
-    cloneWrap.style.zIndex = "-1";
-
-    const clone = original.cloneNode(true);
-    clone.style.transform = "none";
-    clone.style.boxShadow = "none";
-    clone.style.border = "none";
-    clone.style.margin = "0";
-
-    limpiarClonParaPlantilla(clone);
-
-    cloneWrap.appendChild(clone);
-    document.body.appendChild(cloneWrap);
-
-    const canvas = await html2canvas(clone, {
-      scale: 2,
-      useCORS: true,
-      backgroundColor: "#ffffff"
-    });
-
-    cloneWrap.remove();
-
-    const pngBlob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
-    const pngBytes = new Uint8Array(await pngBlob.arrayBuffer());
-
-    const pdfDoc = await PDFDocument.create();
-    const pageWidth = 595.28;
-    const pageHeight = 841.89;
-    const page = pdfDoc.addPage([pageWidth, pageHeight]);
-    const image = await pdfDoc.embedPng(pngBytes);
-    const form = pdfDoc.getForm();
-    const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
-
-    page.drawImage(image, {
-      x: 0,
-      y: 0,
-      width: pageWidth,
-      height: pageHeight
-    });
-
-    const fields = obtenerCamposEditables();
-
-    for (const field of fields) {
-      const { id, element, value, type, options } = field;
-      const rect = rectRelativoAPdf(element, original, scale, pageWidth, pageHeight);
-
-      const fontSizePx = parseFloat(getComputedStyle(element).fontSize || "16");
-      const fontSizePdf = Math.max(8, (fontSizePx / original.offsetWidth) * pageWidth);
-
-      if (type === "textarea") {
-        const tf = form.createTextField(id);
-        tf.enableMultiline();
-        tf.setText(value || "");
-        tf.addToPage(page, {
-          x: rect.x,
-          y: rect.y,
-          width: rect.w,
-          height: rect.h,
-          borderWidth: 0,
-          backgroundColor: colorPdfPorCampo(id),
-          textColor: PDFLib.rgb(0, 0, 0),
-          font,
-          fontSize: fontSizePdf
-        });
-        continue;
-      }
-
-      if (type === "select") {
-        const dd = form.createDropdown(id);
-        const cleanOptions = options.length ? options : [""];
-        dd.addOptions(cleanOptions);
-
-        if (value && cleanOptions.includes(value)) {
-          dd.select(value);
-        }
-
-        dd.addToPage(page, {
-          x: rect.x,
-          y: rect.y,
-          width: rect.w,
-          height: rect.h,
-          borderWidth: 0,
-          backgroundColor: colorPdfPorCampo(id),
-          textColor: PDFLib.rgb(0, 0, 0),
-          font,
-          fontSize: Math.max(8, fontSizePdf - 1)
-        });
-        continue;
-      }
-
-      const tf = form.createTextField(id);
-      tf.setText(value || "");
-      tf.addToPage(page, {
+    function opcionesCampoBase(id, rect, font, fontSize) {
+      const base = {
         x: rect.x,
         y: rect.y,
         width: rect.w,
         height: rect.h,
         borderWidth: 0,
-        backgroundColor: colorPdfPorCampo(id),
         textColor: PDFLib.rgb(0, 0, 0),
         font,
-        fontSize: fontSizePdf
-      });
+        fontSize
+      };
+
+      const bg = colorPdfPorCampo(id);
+      if (bg) {
+        base.backgroundColor = bg;
+      }
+
+      return base;
     }
 
-    form.updateFieldAppearances(font);
-
-    const pdfBytes = await pdfDoc.save();
-    return new Blob([pdfBytes], { type: "application/pdf" });
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    actualizarFecha();
-    actualizarEscala();
-
-    window.addEventListener("resize", actualizarEscala);
-
-    const boton = document.querySelector("#boton .boton");
-    if (!boton) return;
-
-    boton.addEventListener("click", async (e) => {
-      e.preventDefault();
-
-      const siniestro1 = document.getElementById("siniestro1")?.value.trim() || "";
-      const siniestro2 = document.getElementById("siniestro2")?.value.trim() || "";
-      const ubicacion = document.getElementById("ubicacion")?.value.trim() || "";
-      const localidad = document.getElementById("localidad")?.value.trim() || "";
-      const matricula = document.getElementById("matricula")?.value.trim() || "";
-      const marca = document.getElementById("marca")?.value.trim() || "";
-      const modelo = document.getElementById("modelo")?.value.trim() || "";
-      const color = document.getElementById("color")?.value.trim() || "";
-      const motor = document.getElementById("motor")?.value.trim() || "";
-      const chasis = document.getElementById("chasis")?.value.trim() || "";
-      const cambio = document.getElementById("cambio")?.value.trim() || "";
-      const realizadoPor = document.getElementById("realizadoPor")?.value.trim() || "";
-      const insumioDesarme = document.getElementById("insumioDesarme")?.value.trim() || "";
-      const motorRecuperable = document.getElementById("motorRecuperable")?.value.trim() || "";
-      const vehiculoRecuperable = document.getElementById("vehiculoRecuperable")?.value.trim() || "";
-      const horasDesarme = document.getElementById("horasDesarme")?.value.trim() || "";
-      const tipoRecupero = document.getElementById("tipoRecupero")?.value.trim() || "";
-      
-     
-
-      if (
-        !siniestro1 ||
-        !siniestro2 ||
-        !ubicacion ||
-        !localidad ||
-        !matricula ||
-        !marca ||
-        !modelo ||
-        !color ||
-        !motor ||
-        !chasis ||
-        !cambio  )
-      {
-        alert("Complete Siniestro, Año y datos del vehículo antes de generar el PDF.");
-        return;
-      }
-
-
-      if (
-        !insumioDesarme ||
-        !vehiculoRecuperable ||
-        !motorRecuperable) 
-      {
-        alert("Debe completar si el vehículo insumió desarme y si es recuperable.");
-        return;
-      }
-      
-      if (insumioDesarme === "SI" && !horasDesarme) {
-        alert("Recuerde ingresar las horas de desarme.");
-        return;
-      }
-      
-       if (vehiculoRecuperable === "SI" && !tipoRecupero) {
-              alert("Recuerde ingresar el tipo de recupero.");
-              return;
-            }
-      
-      if (!realizadoPor) {
-        alert("Debe ingresar el nombre del tasador antes de generar el PDF.");
-        return;
-      }
-
+    async function generarPdfEditableBlob() {
       actualizarFecha();
 
-      const ok = confirm(`¿El número de siniestro ingresado es correcto: ${siniestro1}-${siniestro2}?`);
-      if (!ok) return;
+      const { PDFDocument, StandardFonts } = PDFLib;
+      const original = document.getElementById("contenidoPDF");
 
-      try {
-        document.body.classList.add("modo-pdf");
+      const pdfDoc = await PDFDocument.create();
+      const pageWidth = 595.28;
+      const pageHeight = 841.89;
+      const page = pdfDoc.addPage([pageWidth, pageHeight]);
+      const form = pdfDoc.getForm();
+      const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
 
-        const blob = await generarPdfEditableBlob();
+      const bodyTeniaModoPdf = document.body.classList.contains("modo-pdf");
+      document.body.classList.add("modo-pdf");
 
-        const nombreArchivo = `${siniestro1}_${siniestro2}_Acta_de_Restos.pdf`;
-        const formData = new FormData();
-        formData.append("pdf", blob, nombreArchivo);
-        formData.append("filename", nombreArchivo);
-        formData.append("folder", "Acta de Restos");
+      const cloneWrap = document.createElement("div");
+      cloneWrap.style.position = "fixed";
+      cloneWrap.style.left = "-20000px";
+      cloneWrap.style.top = "0";
+      cloneWrap.style.width = "210mm";
+      cloneWrap.style.background = "#fff";
+      cloneWrap.style.zIndex = "-1";
 
-        const res = await fetch("https://extra-seguro-backend.onrender.com/upload", {
-          method: "POST",
-          body: formData
-        });
+      const clone = original.cloneNode(true);
+      clone.style.transform = "none";
+      clone.style.boxShadow = "none";
+      clone.style.border = "0";
+      clone.style.margin = "0";
+      clone.style.width = "210mm";
+      clone.style.minHeight = "297mm";
 
-        if (res.ok) {
-          alert("PDF editable enviado y subido correctamente.");
-        } else {
-          alert(`Error al subir PDF: ${res.status}`);
+      limpiarClonParaPlantilla(clone);
+
+      cloneWrap.appendChild(clone);
+      document.body.appendChild(cloneWrap);
+
+      await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+
+      const canvas = await html2canvas(clone, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: "#ffffff",
+        width: clone.scrollWidth,
+        height: clone.scrollHeight,
+        windowWidth: clone.scrollWidth,
+        windowHeight: clone.scrollHeight
+      });
+
+      const pngBlob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
+      const pngBytes = new Uint8Array(await pngBlob.arrayBuffer());
+      const image = await pdfDoc.embedPng(pngBytes);
+
+      page.drawImage(image, {
+        x: 0,
+        y: 0,
+        width: pageWidth,
+        height: pageHeight
+      });
+
+      const fieldsOriginal = obtenerCamposEditables(original);
+      const fieldsClone = obtenerCamposEditables(clone);
+
+      for (let i = 0; i < fieldsOriginal.length; i += 1) {
+        const field = fieldsOriginal[i];
+        const fieldClone = fieldsClone[i];
+        if (!fieldClone) continue;
+
+        const { id, value, type, options } = field;
+        const rect = rectRelativoAPdf(fieldClone.element, clone, pageWidth, pageHeight);
+
+        const fontSizePx = parseFloat(getComputedStyle(field.element).fontSize || "16");
+        const fontSizePdf = Math.max(7, (fontSizePx / clone.getBoundingClientRect().width) * pageWidth);
+
+        if (type === "textarea") {
+          const tf = form.createTextField(id);
+          tf.enableMultiline();
+          tf.setText(value || "");
+          tf.addToPage(page, opcionesCampoBase(id, rect, font, fontSizePdf));
+          continue;
         }
-      } catch (err) {
-        alert(`Error generando o subiendo el PDF editable: ${err?.message || err}`);
-      } finally {
-        document.body.classList.remove("modo-pdf");
-        actualizarEscala();
+
+        if (type === "select") {
+          const dd = form.createDropdown(id);
+          const cleanOptions = options.length ? options : [""];
+          dd.addOptions(cleanOptions);
+
+          if (value && cleanOptions.includes(value)) {
+            dd.select(value);
+          }
+
+          dd.addToPage(page, opcionesCampoBase(id, rect, font, Math.max(7, fontSizePdf - 1)));
+          continue;
+        }
+
+        const tf = form.createTextField(id);
+        tf.setText(value || "");
+        tf.addToPage(page, opcionesCampoBase(id, rect, font, fontSizePdf));
       }
+
+      form.updateFieldAppearances(font);
+
+      cloneWrap.remove();
+      if (!bodyTeniaModoPdf) {
+        document.body.classList.remove("modo-pdf");
+      }
+
+      const pdfBytes = await pdfDoc.save();
+      return new Blob([pdfBytes], { type: "application/pdf" });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      actualizarFecha();
+      actualizarEscala();
+
+      window.addEventListener("resize", actualizarEscala);
+
+      const boton = document.querySelector("#boton .boton");
+      if (!boton) return;
+
+      boton.addEventListener("click", async (e) => {
+        e.preventDefault();
+
+        const siniestro1 = document.getElementById("siniestro1")?.value.trim() || "";
+        const siniestro2 = document.getElementById("siniestro2")?.value.trim() || "";
+        const ubicacion = document.getElementById("ubicacion")?.value.trim() || "";
+        const localidad = document.getElementById("localidad")?.value.trim() || "";
+        const matricula = document.getElementById("matricula")?.value.trim() || "";
+        const marca = document.getElementById("marca")?.value.trim() || "";
+        const modelo = document.getElementById("modelo")?.value.trim() || "";
+        const color = document.getElementById("color")?.value.trim() || "";
+        const motor = document.getElementById("motor")?.value.trim() || "";
+        const chasis = document.getElementById("chasis")?.value.trim() || "";
+        const cambio = document.getElementById("cambio")?.value.trim() || "";
+        const realizadoPor = document.getElementById("realizadoPor")?.value.trim() || "";
+        const insumioDesarme = document.getElementById("insumioDesarme")?.value.trim() || "";
+        const motorRecuperable = document.getElementById("motorRecuperable")?.value.trim() || "";
+        const vehiculoRecuperable = document.getElementById("vehiculoRecuperable")?.value.trim() || "";
+        const horasDesarme = document.getElementById("horasDesarme")?.value.trim() || "";
+        const tipoRecupero = document.getElementById("tipoRecupero")?.value.trim() || "";
+
+        if (
+          !siniestro1 ||
+          !siniestro2 ||
+          !ubicacion ||
+          !localidad ||
+          !matricula ||
+          !marca ||
+          !modelo ||
+          !color ||
+          !motor ||
+          !chasis ||
+          !cambio
+        ) {
+          alert("Complete Siniestro, Año y datos del vehículo antes de generar el PDF.");
+          return;
+        }
+
+        if (!insumioDesarme || !vehiculoRecuperable || !motorRecuperable) {
+          alert("Debe completar si el vehículo insumió desarme y si es recuperable.");
+          return;
+        }
+
+        if (insumioDesarme === "SI" && !horasDesarme) {
+          alert("Recuerde ingresar las horas de desarme.");
+          return;
+        }
+
+        if (vehiculoRecuperable === "SI" && !tipoRecupero) {
+          alert("Recuerde ingresar el tipo de recupero.");
+          return;
+        }
+
+        if (!realizadoPor) {
+          alert("Debe ingresar el nombre del tasador antes de generar el PDF.");
+          return;
+        }
+
+        actualizarFecha();
+
+        const ok = confirm(`¿El número de siniestro ingresado es correcto: ${siniestro1}-${siniestro2}?`);
+        if (!ok) return;
+
+        try {
+          document.body.classList.add("modo-pdf");
+
+          const blob = await generarPdfEditableBlob();
+
+          const nombreArchivo = `${siniestro1}_${siniestro2}_Acta_de_Restos.pdf`;
+          const formData = new FormData();
+          formData.append("pdf", blob, nombreArchivo);
+          formData.append("filename", nombreArchivo);
+          formData.append("folder", "Acta de Restos");
+
+          const res = await fetch("https://extra-seguro-backend.onrender.com/upload", {
+            method: "POST",
+            body: formData
+          });
+
+          if (res.ok) {
+            alert("PDF editable enviado y subido correctamente.");
+          } else {
+            alert(`Error al subir PDF: ${res.status}`);
+          }
+        } catch (err) {
+          alert(`Error generando o subiendo el PDF editable: ${err?.message || err}`);
+        } finally {
+          document.body.classList.remove("modo-pdf");
+          actualizarEscala();
+        }
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
 
