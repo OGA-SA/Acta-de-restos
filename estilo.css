@@ -594,12 +594,12 @@ select.firma-input {
 }
 /* Mueve toda la columna derecha más a la izquierda */
 
-.recuperable-grid label.sin-subrayado,
+.recuperable-grid select:nth-child(4),
 .recuperable-grid input:nth-child(4) {
   transform: translateX(-25px) !important;
 }
 .recuperable-grid label:nth-child(3),
-.recuperable-grid select:nth-child(4){
+.recuperable-grid label.sin-subrayado{
   transform: translateX(-15px) !important;
 }
 
