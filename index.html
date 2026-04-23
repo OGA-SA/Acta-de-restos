@@ -474,12 +474,21 @@
       if (
         !insumioDesarme ||
         !vehiculoRecuperable ||
-        !motorRecuperable ||
-        !tipoRecupero ) 
+        !motorRecuperable) 
       {
-        alert("Debe completar si es recuperable y si insumió desarme.");
+        alert("Debe completar si el vehículo insumió desarme y si es recuperable.");
         return;
       }
+      
+      if (insumioDesarme === "SI" && !horasDesarme) {
+        alert("Recuerde ingresar las horas de desarme.");
+        return;
+      }
+      
+       if (vehiculoRecuperable === "SI" && !tipoRecupero) {
+              alert("Recuerde ingresar el tipo de recupero.");
+              return;
+            }
       
       if (!realizadoPor) {
         alert("Debe ingresar el nombre del tasador antes de generar el PDF.");
