@@ -567,7 +567,7 @@ select.firma-input {
   text-align: right;
   border-bottom: 2px solid var(--borde);
   padding-bottom: 5px;
-  transform: translateX(45px) !important;
+  transform: translateX(55px) !important;
 }
 
 /* Inputs derechos normales */
