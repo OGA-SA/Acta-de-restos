@@ -205,86 +205,86 @@
   <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
   
  <script>
-  function actualizarFecha() {
-    const fechaDiv = document.getElementById("fecha");
-    if (!fechaDiv) return;
-
-    const hoy = new Date();
-    const meses = [
-      "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-      "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"
-    ];
-
-    const dia = hoy.getDate();
-    const mes = meses[hoy.getMonth()];
-    const anio = hoy.getFullYear();
-    fechaDiv.textContent = `${dia} de ${mes} de ${anio}`;
-  }
-
-  function actualizarEscala() {
-    const escalado = document.getElementById("escalado");
-    const contenido = document.getElementById("contenidoPDF");
-    if (!escalado || !contenido) return;
-
-    const baseWidth = 1100;
-    const viewportWidth = Math.max(window.innerWidth - 32, 320);
-    const scale = Math.min(viewportWidth / baseWidth, 1);
-    escalado.style.setProperty("--scale", scale.toFixed(4));
-    escalado.style.height = `${contenido.offsetHeight * scale}px`;
-  }
-
-  function generarPDF() {
-    document.querySelector("#boton .boton")?.click();
-  }
-
-  function obtenerEscalaActual() {
-    const escalado = document.getElementById("escalado");
-    const value = getComputedStyle(escalado).getPropertyValue("--scale");
-    const scale = parseFloat(value);
-    return Number.isFinite(scale) && scale > 0 ? scale : 1;
-  }
-
-  function limpiarClonParaPlantilla(clone) {
-    clone.querySelectorAll("input, textarea, select").forEach((el) => {
-      if (el.type === "hidden") return;
-
-      if (el.tagName === "SELECT") {
-        el.selectedIndex = 0;
-      } else if (el.type === "radio" || el.type === "checkbox") {
-        el.checked = false;
-      } else {
-        el.value = "";
+      function actualizarFecha() {
+        const fechaDiv = document.getElementById("fecha");
+        if (!fechaDiv) return;
+    
+        const hoy = new Date();
+        const meses = [
+          "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+          "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"
+        ];
+    
+        const dia = hoy.getDate();
+        const mes = meses[hoy.getMonth()];
+        const anio = hoy.getFullYear();
+        fechaDiv.textContent = `${dia} de ${mes} de ${anio}`;
       }
-    });
-  }
-
-  function obtenerCamposEditables() {
-    const root = document.getElementById("contenidoPDF");
-    const fields = [];
-    let autoIndex = 0;
-
-    root.querySelectorAll("input, textarea, select").forEach((el) => {
-      if (el.type === "hidden") return;
-      if (el.type === "radio" || el.type === "checkbox") return;
-
-      const id = el.id || el.name || `campo_${++autoIndex}`;
-      const value = el.tagName === "SELECT"
-        ? (el.value || "")
-        : (el.value || "").trim();
-
-      fields.push({
-        id,
-        element: el,
-        value,
-        type: el.tagName.toLowerCase(),
-        options: el.tagName === "SELECT"
-          ? Array.from(el.options).map((o) => o.textContent.trim()).filter(Boolean)
-          : []
-      });
-    });
-
-    return fields;
-  }
+    
+      function actualizarEscala() {
+        const escalado = document.getElementById("escalado");
+        const contenido = document.getElementById("contenidoPDF");
+        if (!escalado || !contenido) return;
+    
+        const baseWidth = 1100;
+        const viewportWidth = Math.max(window.innerWidth - 32, 320);
+        const scale = Math.min(viewportWidth / baseWidth, 1);
+        escalado.style.setProperty("--scale", scale.toFixed(4));
+        escalado.style.height = `${contenido.offsetHeight * scale}px`;
+      }
+    
+      function generarPDF() {
+        document.querySelector("#boton .boton")?.click();
+      }
+    
+      function obtenerEscalaActual() {
+        const escalado = document.getElementById("escalado");
+        const value = getComputedStyle(escalado).getPropertyValue("--scale");
+        const scale = parseFloat(value);
+        return Number.isFinite(scale) && scale > 0 ? scale : 1;
+      }
+    
+      function limpiarClonParaPlantilla(clone) {
+        clone.querySelectorAll("input, textarea, select").forEach((el) => {
+          if (el.type === "hidden") return;
+    
+          if (el.tagName === "SELECT") {
+            el.selectedIndex = 0;
+          } else if (el.type === "radio" || el.type === "checkbox") {
+            el.checked = false;
+          } else {
+            el.value = "";
+          }
+        });
+      }
+    
+      function obtenerCamposEditables() {
+        const root = document.getElementById("contenidoPDF");
+        const fields = [];
+        let autoIndex = 0;
+    
+        root.querySelectorAll("input, textarea, select").forEach((el) => {
+          if (el.type === "hidden") return;
+          if (el.type === "radio" || el.type === "checkbox") return;
+    
+          const id = el.id || el.name || `campo_${++autoIndex}`;
+          const value = el.tagName === "SELECT"
+            ? (el.value || "")
+            : (el.value || "").trim();
+    
+          fields.push({
+            id,
+            element: el,
+            value,
+            type: el.tagName.toLowerCase(),
+            options: el.tagName === "SELECT"
+              ? Array.from(el.options).map((o) => o.textContent.trim()).filter(Boolean)
+              : []
+          });
+        });
+    
+        return fields;
+      }
 
   function rectRelativoAPdf(element, container, scale, pageWidth, pageHeight) {
     const elRect = element.getBoundingClientRect();
