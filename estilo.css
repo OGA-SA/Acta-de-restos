@@ -375,6 +375,7 @@ body {
 .recuperables {
   width: 100%;
   overflow: hidden;
+  margin-top: 15px;
 }
 
 .recuperable-grid {
