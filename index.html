@@ -445,6 +445,23 @@
       const chasis = document.getElementById("chasis")?.value.trim() || "";
       const cambio = document.getElementById("cambio")?.value.trim() || "";
       const realizadoPor = document.getElementById("realizadoPor")?.value.trim() || "";
+      const insumioDesarme = document.getElementById("insumioDesarme")?.value.trim() || "";
+      const motorRecuperable = document.getElementById("motorRecuperable")?.value.trim() || "";
+      const vehiculoRecuperable = document.getElementById("vehiculoRecuperable")?.value.trim() || "";
+      const horasDesarme = document.getElementById("horasDesarme")?.value.trim() || "";
+      const tipoRecupero = document.getElementById("tipoRecupero")?.value.trim() || "";
+      
+      
+
+      if (
+        !insumioDesarme ||
+        !vehiculoRecuperable ||
+        !motorRecuperable ||
+        !tipoRecupero ||
+              ) {
+        alert("Debe completar si es recuperable y si insumió desarme.");
+        return;
+      }
 
       if (
         !siniestro1 ||
