@@ -94,33 +94,33 @@
             <tbody>
               <tr>
                 <td>VALOR VENAL AUTODATA (Automoviles // Vehiculos Pesados)</td>
-                <td><input type="text" /></td>
-                <td><input type="text" /></td>
+                <td><input type="text" id="valorVenalAutodataUsd" /></td>
+                <td><input type="text" id="valorVenalAutodataUy" /></td>
               </tr>
               <tr>
                 <td>VALOR VENAL PLAZA (Motos)</td>
-                <td><input type="text" /></td>
-                <td><input type="text" /></td>
+                <td><input type="text" id="valorVenalPlazaUsd" /></td>
+                <td><input type="text" id="valorVenalPlazaUy" /></td>
               </tr>
               <tr>
                 <td>VALOR ESTIMADO DE LA REPARACION</td>
-                <td><input type="text" /></td>
-                <td><input type="text" /></td>
+                <td><input type="text" id="valorEstimadoReparacionUsd" /></td>
+                <td><input type="text" id="valorEstimadoReparacionUy" /></td>
               </tr>
               <tr>
                 <td>VALOR SUGERIDO DE RESTOS</td>
-                <td><input type="text" /></td>
-                <td><input type="text" /></td>
+                <td><input type="text" id="valorSugeridoRestosUsd" /></td>
+                <td><input type="text" id="valorSugeridoRestosUy" /></td>
               </tr>
               <tr>
                 <td>VALOR MINIMO DE RESTOS</td>
-                <td><input type="text" /></td>
-                <td><input type="text" /></td>
+                <td><input type="text" id="valorMinimoRestosUsd" /></td>
+                <td><input type="text" id="valorMinimoRestosUy" /></td>
               </tr>
               <tr>
                 <td>DEPRECIACIONES</td>
-                <td><input type="text" /></td>
-                <td><input type="text" /></td>
+                <td><input type="text" id="depreciacionesUsd" /></td>
+                <td><input type="text" id="depreciacionesUy" /></td>
               </tr>
             </tbody>
           </table>
@@ -201,50 +201,235 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-  <script>
-    function actualizarFecha() {
-      const fechaDiv = document.getElementById("fecha");
-      if (!fechaDiv) return;
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+ <script>
+  function actualizarFecha() {
+    const fechaDiv = document.getElementById("fecha");
+    if (!fechaDiv) return;
 
-      const hoy = new Date();
-      const meses = [
-        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-        "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"
-      ];
+    const hoy = new Date();
+    const meses = [
+      "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+      "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"
+    ];
 
-      const dia = hoy.getDate();
-      const mes = meses[hoy.getMonth()];
-      const anio = hoy.getFullYear();
-      fechaDiv.textContent = `${dia} de ${mes} de ${anio}`;
+    const dia = hoy.getDate();
+    const mes = meses[hoy.getMonth()];
+    const anio = hoy.getFullYear();
+    fechaDiv.textContent = `${dia} de ${mes} de ${anio}`;
+  }
+
+  function actualizarEscala() {
+    const escalado = document.getElementById("escalado");
+    const contenido = document.getElementById("contenidoPDF");
+    if (!escalado || !contenido) return;
+
+    const baseWidth = 1100;
+    const viewportWidth = Math.max(window.innerWidth - 32, 320);
+    const scale = Math.min(viewportWidth / baseWidth, 1);
+    escalado.style.setProperty("--scale", scale.toFixed(4));
+    escalado.style.height = `${contenido.offsetHeight * scale}px`;
+  }
+
+  function generarPDF() {
+    document.querySelector("#boton .boton")?.click();
+  }
+
+  function obtenerEscalaActual() {
+    const escalado = document.getElementById("escalado");
+    const value = getComputedStyle(escalado).getPropertyValue("--scale");
+    const scale = parseFloat(value);
+    return Number.isFinite(scale) && scale > 0 ? scale : 1;
+  }
+
+  function limpiarClonParaPlantilla(clone) {
+    clone.querySelectorAll("input, textarea, select").forEach((el) => {
+      if (el.type === "hidden") return;
+
+      if (el.tagName === "SELECT") {
+        el.selectedIndex = 0;
+      } else if (el.type === "radio" || el.type === "checkbox") {
+        el.checked = false;
+      } else {
+        el.value = "";
+      }
+    });
+  }
+
+  function obtenerCamposEditables() {
+    const root = document.getElementById("contenidoPDF");
+    const fields = [];
+    let autoIndex = 0;
+
+    root.querySelectorAll("input, textarea, select").forEach((el) => {
+      if (el.type === "hidden") return;
+      if (el.type === "radio" || el.type === "checkbox") return;
+
+      const id = el.id || el.name || `campo_${++autoIndex}`;
+      const value = el.tagName === "SELECT"
+        ? (el.value || "")
+        : (el.value || "").trim();
+
+      fields.push({
+        id,
+        element: el,
+        value,
+        type: el.tagName.toLowerCase(),
+        options: el.tagName === "SELECT"
+          ? Array.from(el.options).map((o) => o.textContent.trim()).filter(Boolean)
+          : []
+      });
+    });
+
+    return fields;
+  }
+
+  function rectRelativoAPdf(element, container, scale, pageWidth, pageHeight) {
+    const elRect = element.getBoundingClientRect();
+    const containerRect = container.getBoundingClientRect();
+
+    const left = (elRect.left - containerRect.left) / scale;
+    const top = (elRect.top - containerRect.top) / scale;
+    const width = elRect.width / scale;
+    const height = elRect.height / scale;
+
+    const x = (left / container.offsetWidth) * pageWidth;
+    const y = pageHeight - ((top + height) / container.offsetHeight) * pageHeight;
+    const w = (width / container.offsetWidth) * pageWidth;
+    const h = (height / container.offsetHeight) * pageHeight;
+
+    return { x, y, w, h };
+  }
+
+  async function generarPdfEditableBlob() {
+    actualizarFecha();
+
+    const { PDFDocument, StandardFonts } = PDFLib;
+
+    const original = document.getElementById("contenidoPDF");
+    const scale = obtenerEscalaActual();
+
+    const cloneWrap = document.createElement("div");
+    cloneWrap.style.position = "fixed";
+    cloneWrap.style.left = "-20000px";
+    cloneWrap.style.top = "0";
+    cloneWrap.style.width = `${original.offsetWidth}px`;
+    cloneWrap.style.background = "#fff";
+    cloneWrap.style.zIndex = "-1";
+
+    const clone = original.cloneNode(true);
+    clone.style.transform = "none";
+    clone.style.boxShadow = "none";
+    clone.style.border = "none";
+    clone.style.margin = "0";
+
+    limpiarClonParaPlantilla(clone);
+
+    cloneWrap.appendChild(clone);
+    document.body.appendChild(cloneWrap);
+
+    const canvas = await html2canvas(clone, {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: "#ffffff"
+    });
+
+    cloneWrap.remove();
+
+    const pngBlob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
+    const pngBytes = new Uint8Array(await pngBlob.arrayBuffer());
+
+    const pdfDoc = await PDFDocument.create();
+    const pageWidth = 595.28;
+    const pageHeight = 841.89;
+    const page = pdfDoc.addPage([pageWidth, pageHeight]);
+    const image = await pdfDoc.embedPng(pngBytes);
+    const form = pdfDoc.getForm();
+    const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+
+    page.drawImage(image, {
+      x: 0,
+      y: 0,
+      width: pageWidth,
+      height: pageHeight
+    });
+
+    const fields = obtenerCamposEditables();
+
+    for (const field of fields) {
+      const { id, element, value, type, options } = field;
+      const rect = rectRelativoAPdf(element, original, scale, pageWidth, pageHeight);
+
+      const fontSizePx = parseFloat(getComputedStyle(element).fontSize || "16");
+      const fontSizePdf = Math.max(8, (fontSizePx / original.offsetWidth) * pageWidth);
+
+      if (type === "textarea") {
+        const tf = form.createTextField(id);
+        tf.enableMultiline();
+        tf.setText(value || "");
+        tf.addToPage(page, {
+          x: rect.x,
+          y: rect.y,
+          width: rect.w,
+          height: rect.h,
+          borderWidth: 0,
+          font,
+          fontSize: fontSizePdf
+        });
+        continue;
+      }
+
+      if (type === "select") {
+        const dd = form.createDropdown(id);
+        const cleanOptions = options.length ? options : [""];
+        dd.addOptions(cleanOptions);
+
+        if (value && cleanOptions.includes(value)) {
+          dd.select(value);
+        }
+
+        dd.addToPage(page, {
+          x: rect.x,
+          y: rect.y,
+          width: rect.w,
+          height: rect.h,
+          borderWidth: 0,
+          font,
+          fontSize: Math.max(8, fontSizePdf - 1)
+        });
+        continue;
+      }
+
+      const tf = form.createTextField(id);
+      tf.setText(value || "");
+      tf.addToPage(page, {
+        x: rect.x,
+        y: rect.y,
+        width: rect.w,
+        height: rect.h,
+        borderWidth: 0,
+        font,
+        fontSize: fontSizePdf
+      });
     }
 
-    function actualizarEscala() {
-      const escalado = document.getElementById("escalado");
-      const contenido = document.getElementById("contenidoPDF");
-      if (!escalado || !contenido) return;
+    form.updateFieldAppearances(font);
 
-      const baseWidth = 1100;
-      const viewportWidth = Math.max(window.innerWidth - 32, 320);
-      const scale = Math.min(viewportWidth / baseWidth, 1);
-      escalado.style.setProperty("--scale", scale.toFixed(4));
-      escalado.style.height = `${contenido.offsetHeight * scale}px`;
-    }
+    const pdfBytes = await pdfDoc.save();
+    return new Blob([pdfBytes], { type: "application/pdf" });
+  }
 
-    function generarPDF() {
-      document.querySelector("#boton .boton")?.click();
-    }
+  document.addEventListener("DOMContentLoaded", () => {
+    actualizarFecha();
+    actualizarEscala();
 
-    document.addEventListener("DOMContentLoaded", () => {
-      actualizarFecha();
-      actualizarEscala();
+    window.addEventListener("resize", actualizarEscala);
 
-      window.addEventListener("resize", actualizarEscala);
+    const boton = document.querySelector("#boton .boton");
+    if (!boton) return;
 
-      const boton = document.querySelector("#boton .boton");
-      if (!boton) return;
-
-      boton.addEventListener("click", async (e) => {
-        e.preventDefault();
+    boton.addEventListener("click", async (e) => {
+      e.preventDefault();
 
       const siniestro1 = document.getElementById("siniestro1")?.value.trim() || "";
       const siniestro2 = document.getElementById("siniestro2")?.value.trim() || "";
@@ -257,79 +442,66 @@
       const motor = document.getElementById("motor")?.value.trim() || "";
       const chasis = document.getElementById("chasis")?.value.trim() || "";
       const cambio = document.getElementById("cambio")?.value.trim() || "";
-      
-          if (
-            !siniestro1 ||
-            !siniestro2 ||
-            !ubicacion ||
-            !localidad ||
-            !matricula ||
-            !marca ||
-            !modelo ||
-            !color ||
-            !motor ||
-            !chasis ||
-            !cambio
-          ) {
-            alert("Complete Siniestro, Año y datos del vehículo antes de generar el PDF.");
-            return;
-          }
-        
       const realizadoPor = document.getElementById("realizadoPor")?.value.trim() || "";
-        if ( !realizadoPor  ) {
-            alert("Debe ingresar el nombre del tasador antes de generar el PDF.");
-            return;
-          }
 
-        actualizarFecha();
+      if (
+        !siniestro1 ||
+        !siniestro2 ||
+        !ubicacion ||
+        !localidad ||
+        !matricula ||
+        !marca ||
+        !modelo ||
+        !color ||
+        !motor ||
+        !chasis ||
+        !cambio
+      ) {
+        alert("Complete Siniestro, Año y datos del vehículo antes de generar el PDF.");
+        return;
+      }
 
-        const ok = confirm(`¿El número de siniestro ingresado es correcto: ${siniestro1}-${siniestro2}?`);
-        if (!ok) return;
+      if (!realizadoPor) {
+        alert("Debe ingresar el nombre del tasador antes de generar el PDF.");
+        return;
+      }
 
-        const element = document.getElementById("contenidoPDF");
-        if (!element) {
-          alert("No se encontró el contenido a exportar.");
-          return;
+      actualizarFecha();
+
+      const ok = confirm(`¿El número de siniestro ingresado es correcto: ${siniestro1}-${siniestro2}?`);
+      if (!ok) return;
+
+      try {
+        document.body.classList.add("modo-pdf");
+
+        const blob = await generarPdfEditableBlob();
+
+        const nombreArchivo = `${siniestro1}_${siniestro2}_Formulario_1_editable.pdf`;
+        const formData = new FormData();
+        formData.append("pdf", blob, nombreArchivo);
+        formData.append("filename", nombreArchivo);
+        formData.append("folder", "Formulario 1");
+
+        const res = await fetch("https://extra-seguro-backend.onrender.com/upload", {
+          method: "POST",
+          body: formData
+        });
+
+        if (res.ok) {
+          alert("PDF editable enviado y subido correctamente.");
+        } else {
+          alert(`Error al subir PDF: ${res.status}`);
         }
-
-        try {
-          document.body.classList.add("modo-pdf");
-
-          const opt = {
-            margin: [0, 0, 0, 0],
-            filename: `${siniestro1}-${siniestro2}.pdf`,
-            image: { type: "jpeg", quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true },
-            jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
-          };
-
-          const blob = await html2pdf().set(opt).from(element).output("blob");
-
-          const nombreArchivo = `${siniestro1}_${siniestro2}_Formulario_1.pdf`;
-          const formData = new FormData();
-          formData.append("pdf", blob, nombreArchivo);
-          formData.append("filename", nombreArchivo);
-          formData.append("folder", "Formulario 1");
-
-          const res = await fetch("https://extra-seguro-backend.onrender.com/upload", {
-            method: "POST",
-            body: formData
-          });
-
-          if (res.ok) {
-            alert("PDF enviado y subido correctamente.");
-          } else {
-            alert(`Error al subir PDF: ${res.status}`);
-          }
-        } catch (err) {
-          alert(`Error generando o subiendo el PDF: ${err?.message || err}`);
-        } finally {
-          document.body.classList.remove("modo-pdf");
-          actualizarEscala();
-        }
-      });
+      } catch (err) {
+        alert(`Error generando o subiendo el PDF editable: ${err?.message || err}`);
+      } finally {
+        document.body.classList.remove("modo-pdf");
+        actualizarEscala();
+      }
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
 
