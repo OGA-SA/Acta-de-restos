@@ -350,20 +350,6 @@ body {
   font-weight: 700;
 }
 
-.si-no {
-  display: grid;
-  grid-template-columns: auto 18px auto 18px;
-  align-items: center;
-  gap: 18px;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.si-no input {
-  width: 18px;
-  height: 18px;
-  margin: 0;
-}
 
 #nota {
   min-height: 220px;
