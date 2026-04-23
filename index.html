@@ -303,6 +303,37 @@
     return { x, y, w, h };
   }
 
+   function colorPdfPorCampo(id) {
+      const { rgb } = PDFLib;
+    
+      const colors = {
+        ubicacion: rgb(1, 0.752, 0),          // amarillo fuerte
+        localidad: rgb(1, 0.752, 0),
+        modelo: rgb(1, 0.752, 0),
+        chasis: rgb(1, 0.752, 0),
+    
+        siniestro1: rgb(1, 0.949, 0.8),       // amarillo suave
+        siniestro2: rgb(1, 0.949, 0.8),
+        matricula: rgb(1, 0.949, 0.8),
+        marca: rgb(1, 0.949, 0.8),
+        anio: rgb(1, 0.949, 0.8),
+    
+        color: rgb(0.953, 0.851, 0.784),      // rosado
+        motor: rgb(0.953, 0.851, 0.784),
+    
+        cambio: rgb(0.373, 0.588, 0.796),     // azul tipo cambio
+        insumioDesarme: rgb(0.663, 0.769, 0.875),
+        horasDesarme: rgb(0.663, 0.769, 0.875),
+        vehiculoRecuperable: rgb(0.663, 0.769, 0.875),
+        tipoRecupero: rgb(0.663, 0.769, 0.875),
+        motorRecuperable: rgb(0.663, 0.769, 0.875),
+    
+        realizadoPor: rgb(1, 1, 1)            // o transparente visualmente
+      };
+    
+      return colors[id] || rgb(1, 1, 1);
+    }
+   
   async function generarPdfEditableBlob() {
     actualizarFecha();
 
@@ -375,6 +406,8 @@
           width: rect.w,
           height: rect.h,
           borderWidth: 0,
+          backgroundColor: colorPdfPorCampo(id),
+          textColor: PDFLib.rgb(0, 0, 0),
           font,
           fontSize: fontSizePdf
         });
@@ -396,6 +429,8 @@
           width: rect.w,
           height: rect.h,
           borderWidth: 0,
+          backgroundColor: colorPdfPorCampo(id),
+          textColor: PDFLib.rgb(0, 0, 0),
           font,
           fontSize: Math.max(8, fontSizePdf - 1)
         });
@@ -410,6 +445,8 @@
         width: rect.w,
         height: rect.h,
         borderWidth: 0,
+        backgroundColor: colorPdfPorCampo(id),
+        textColor: PDFLib.rgb(0, 0, 0),
         font,
         fontSize: fontSizePdf
       });
