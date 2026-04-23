@@ -253,33 +253,39 @@
         e.preventDefault();
 
       const siniestro1 = document.getElementById("siniestro1")?.value.trim() || "";
-const siniestro2 = document.getElementById("siniestro2")?.value.trim() || "";
-const ubicacion = document.getElementById("ubicacion")?.value.trim() || "";
-const localidad = document.getElementById("localidad")?.value.trim() || "";
-const matricula = document.getElementById("matricula")?.value.trim() || "";
-const marca = document.getElementById("marca")?.value.trim() || "";
-const modelo = document.getElementById("modelo")?.value.trim() || "";
-const color = document.getElementById("color")?.value.trim() || "";
-const motor = document.getElementById("motor")?.value.trim() || "";
-const chasis = document.getElementById("chasis")?.value.trim() || "";
-const cambio = document.getElementById("cambio")?.value.trim() || "";
-
-if (
-  !siniestro1 ||
-  !siniestro2 ||
-  !ubicacion ||
-  !localidad ||
-  !matricula ||
-  !marca ||
-  !modelo ||
-  !color ||
-  !motor ||
-  !chasis ||
-  !cambio
-) {
-  alert("Complete Siniestro, Año y datos del vehículo antes de generar el PDF.");
-  return;
-}
+      const siniestro2 = document.getElementById("siniestro2")?.value.trim() || "";
+      const ubicacion = document.getElementById("ubicacion")?.value.trim() || "";
+      const localidad = document.getElementById("localidad")?.value.trim() || "";
+      const matricula = document.getElementById("matricula")?.value.trim() || "";
+      const marca = document.getElementById("marca")?.value.trim() || "";
+      const modelo = document.getElementById("modelo")?.value.trim() || "";
+      const color = document.getElementById("color")?.value.trim() || "";
+      const motor = document.getElementById("motor")?.value.trim() || "";
+      const chasis = document.getElementById("chasis")?.value.trim() || "";
+      const cambio = document.getElementById("cambio")?.value.trim() || "";
+      
+          if (
+            !siniestro1 ||
+            !siniestro2 ||
+            !ubicacion ||
+            !localidad ||
+            !matricula ||
+            !marca ||
+            !modelo ||
+            !color ||
+            !motor ||
+            !chasis ||
+            !cambio
+          ) {
+            alert("Complete Siniestro, Año y datos del vehículo antes de generar el PDF.");
+            return;
+          }
+        
+      const realizadoPor = document.getElementById("realizadoPor")?.value.trim() || "";
+        if ( !realizadoPor  ) {
+            alert("Debe ingresar el nombre del tasador antes de generar el PDF.");
+            return;
+          }
 
         actualizarFecha();
 
