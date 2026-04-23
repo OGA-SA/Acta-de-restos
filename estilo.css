@@ -588,7 +588,7 @@ select.firma-input {
 }
 
 .recuperable-grid label.sin-subrayado + select {
-  width: 190px;
+  width: 200px;
   justify-self: end;
   font-size: 13px;
 }
@@ -596,7 +596,7 @@ select.firma-input {
 
 .recuperable-grid select:nth-child(4),
 .recuperable-grid input:nth-child(4) {
-  transform: translateX(-9px) !important;
+  transform: translateX(-11px) !important;
 }
 
 
