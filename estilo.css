@@ -592,6 +592,13 @@ select.firma-input {
   justify-self: end;
   font-size: 13px;
 }
+/* Mueve toda la columna derecha más a la izquierda */
+.recuperable-grid label:nth-child(3),
+.recuperable-grid label.sin-subrayado,
+.recuperable-grid select:nth-child(4),
+.recuperable-grid input:nth-child(4) {
+  transform: translateX(-45px) !important;
+}
 
 .modo-pdf {
   background: #fff;
