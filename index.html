@@ -451,17 +451,7 @@
       const horasDesarme = document.getElementById("horasDesarme")?.value.trim() || "";
       const tipoRecupero = document.getElementById("tipoRecupero")?.value.trim() || "";
       
-      
-
-      if (
-        !insumioDesarme ||
-        !vehiculoRecuperable ||
-        !motorRecuperable ||
-        !tipoRecupero ||
-              ) {
-        alert("Debe completar si es recuperable y si insumió desarme.");
-        return;
-      }
+     
 
       if (
         !siniestro1 ||
@@ -474,12 +464,23 @@
         !color ||
         !motor ||
         !chasis ||
-        !cambio
-      ) {
+        !cambio  )
+      {
         alert("Complete Siniestro, Año y datos del vehículo antes de generar el PDF.");
         return;
       }
 
+
+      if (
+        !insumioDesarme ||
+        !vehiculoRecuperable ||
+        !motorRecuperable ||
+        !tipoRecupero ) 
+      {
+        alert("Debe completar si es recuperable y si insumió desarme.");
+        return;
+      }
+      
       if (!realizadoPor) {
         alert("Debe ingresar el nombre del tasador antes de generar el PDF.");
         return;
